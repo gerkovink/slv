@@ -23,11 +23,15 @@ Course team: <br>
 - [Maarten Cruyff](https://www.uu.nl/staff/mcruyff) <br>
 - [Erik-Jan van Kesteren](https://erikjanvankesteren.nl) <br>
 Study load: 7.5 ECTS <br>
-Assessment: Assignments and Exam 
+Assessment: Assignments and Exam  <br>
 
 ---
 
-Lectures:
+All practicals and assignments should be hand in [through this repo](https://github.com/gerkovink/INFOMDA1-2021)
+
+---
+
+**LECTURES:**
 
 | When?  |         | Where?      |
 |--------|---------|-------------|
@@ -105,7 +109,7 @@ Students will learn to adapt these techniques in their way of thinking about ana
 
  
 ### Assignment
-Students will form groups to choose work on two assigments. Students will need to perform calculations and program code for these assigments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project (zipped - and in `.Rmd`) and must be submitted to the [Course submission GitHub page]((https://surfdrive.surf.nl/files/index.php/s/LqUCEt3MWVsW7DF). Each assigment will be graded. 
+Students will form groups to choose work on two assigments. Students will need to perform calculations and program code for these assigments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [Course submission GitHub page](https://github.com/gerkovink/INFOMDA1-2021). Each assigment will be graded. 
 
 ### Grading
 Students will be evaluated on the following aspects:
