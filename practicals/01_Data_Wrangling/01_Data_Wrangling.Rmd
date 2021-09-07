@@ -428,11 +428,3 @@ read_csv("data/googleplaystore.csv") %>%
   )
 ```
 
-# Hand-in
-
-When you have finished the practical, 
-
-
-- enclose all files of the project `01_Data_wrangling.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
-
-- hand in the zip file before the start of the next lecture on Wednesday 13:15 to Blackboard ("PRACTICAL: DATA MANIPULATION & EDA").

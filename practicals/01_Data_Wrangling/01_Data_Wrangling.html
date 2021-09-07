@@ -397,7 +397,6 @@ div.tocify {
 <li><strong>Convert <code>object_7</code> back to a vector of numbers using the <code>as.numeric()</code> function</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>object_7 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(object_7)</span></code></pre></div>
 </div>
 <div id="lists-and-data-frames" class="section level1">
 <h1>Lists and data frames</h1>
@@ -407,8 +406,6 @@ div.tocify {
 <li><strong>Make a list called <code>objects</code> containing object 1 to 7 using the <code>list()</code> function.</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>objects <span class="ot">&lt;-</span> <span class="fu">list</span>(object_1, object_2, object_3, object_4, object_5, object_6, </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                object_7)</span></code></pre></div>
 <p>You can select elements of a list using its name (<code>objects$elementname</code>) or using its index (<code>objects[[1]]</code> for the first element).</p>
 <p>A special type of list is the <code>data.frame</code>. It is the same as a list, but each element is forced to have the same length and a name. The elements of a <code>data.frame</code> are the columns of a dataset. In the tidyverse, <code>data.frame</code>s are called <code>tibble</code>s.</p>
 <hr />
@@ -416,23 +413,12 @@ div.tocify {
 <li><strong>Make a data frame out of <code>object_1</code>, <code>object_2</code>, and <code>object_5</code> using the <code>data.frame()</code> function</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Var1 =</span> object_1, <span class="at">Var2 =</span> object_2, <span class="at">Var3 =</span> object_5)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dat</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Var1"],"name":[1],"type":["int"],"align":["right"]},{"label":["Var2"],"name":[2],"type":["int"],"align":["right"]},{"label":["Var3"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"1","3":"a"},{"1":"2","2":"2","3":"b"},{"1":"3","2":"3","3":"c"},{"1":"4","2":"4","3":"d"},{"1":"5","2":"5","3":"e"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 <p>Just like a list, the columns in a data frame (the variables in a dataset) can be accessed using their name <code>df$columnname</code> or their index <code>df[[1]]</code>. Additionally, the tenth row can be selected using <code>df[10, ]</code>, the second column using <code>df[, 2]</code> and cell number 10, 2 can be accessed using <code>df[10, 2]</code>. This is because data frames also behave like the <code>matrix</code> data type in addition to the <code>list</code> type.</p>
 <hr />
 <ol start="5" style="list-style-type: decimal">
 <li><strong>Useful functions for determining the size of a data frame are <code>ncol()</code> and <code>nrow()</code>. Try them out!</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(dat)</span></code></pre></div>
-<pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(dat)</span></code></pre></div>
-<pre><code>## [1] 5</code></pre>
 </div>
 <div id="loading-viewing-and-summarising-data" class="section level1">
 <h1>Loading, viewing, and summarising data</h1>
@@ -443,74 +429,27 @@ div.tocify {
 <li><strong>Use the function <code>read_csv()</code> to import the file “data/googleplaystore.csv” and store it in a variable called <code>apps</code>.</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>apps <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/googleplaystore.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   App = col_character(),
-##   Category = col_character(),
-##   Rating = col_double(),
-##   Reviews = col_double(),
-##   Size = col_character(),
-##   Installs = col_character(),
-##   Type = col_character(),
-##   Price = col_character(),
-##   `Content Rating` = col_character(),
-##   Genres = col_character(),
-##   `Last Updated` = col_character(),
-##   `Current Ver` = col_character(),
-##   `Android Ver` = col_character()
-## )</code></pre>
 <p>If necessary, use the help files. These import functions from the tidyverse are fast and safe: they display informative errors if anything goes wrong. <code>read_csv()</code> also displays a message with information on how each column is imported: which variable type each column gets.</p>
 <hr />
 <ol start="7" style="list-style-type: decimal">
 <li><strong>Did any column get a variable type you did not expect?</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Several columns such as price and number of installs were imported as </span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># character data types, but they are numbers.</span></span></code></pre></div>
 <hr />
 <ol start="8" style="list-style-type: decimal">
 <li><strong>Use the function <code>head()</code> to look at the first few rows of the <code>apps</code> dataset</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(apps)</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["App"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Category"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Rating"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Reviews"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Size"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Installs"],"name":[6],"type":["chr"],"align":["left"]},{"label":["Type"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Price"],"name":[8],"type":["chr"],"align":["left"]},{"label":["Content Rating"],"name":[9],"type":["chr"],"align":["left"]},{"label":["Genres"],"name":[10],"type":["chr"],"align":["left"]},{"label":["Last Updated"],"name":[11],"type":["chr"],"align":["left"]},{"label":["Current Ver"],"name":[12],"type":["chr"],"align":["left"]},{"label":["Android Ver"],"name":[13],"type":["chr"],"align":["left"]}],"data":[{"1":"Photo Editor & Candy Camera & Grid & ScrapBook","2":"ART_AND_DESIGN","3":"4.1","4":"159","5":"19M","6":"10,000+","7":"Free","8":"0","9":"Everyone","10":"Art & Design","11":"January 7, 2018","12":"1.0.0","13":"4.0.3 and up"},{"1":"Coloring book moana","2":"ART_AND_DESIGN","3":"3.9","4":"967","5":"14M","6":"500,000+","7":"Free","8":"0","9":"Everyone","10":"Art & Design;Pretend Play","11":"January 15, 2018","12":"2.0.0","13":"4.0.3 and up"},{"1":"U Launcher Lite \\x96 FREE Live Cool Themes, Hide Apps","2":"ART_AND_DESIGN","3":"4.7","4":"87510","5":"8.7M","6":"5,000,000+","7":"Free","8":"0","9":"Everyone","10":"Art & Design","11":"August 1, 2018","12":"1.2.4","13":"4.0.3 and up"},{"1":"Sketch - Draw & Paint","2":"ART_AND_DESIGN","3":"4.5","4":"215644","5":"25M","6":"50,000,000+","7":"Free","8":"0","9":"Teen","10":"Art & Design","11":"June 8, 2018","12":"Varies with device","13":"4.2 and up"},{"1":"Pixel Draw - Number Art Coloring Book","2":"ART_AND_DESIGN","3":"4.3","4":"967","5":"2.8M","6":"100,000+","7":"Free","8":"0","9":"Everyone","10":"Art & Design;Creativity","11":"June 20, 2018","12":"1.1","13":"4.4 and up"},{"1":"Paper flowers instructions","2":"ART_AND_DESIGN","3":"4.4","4":"167","5":"5.6M","6":"50,000+","7":"Free","8":"0","9":"Everyone","10":"Art & Design","11":"March 26, 2017","12":"1.0","13":"2.3 and up"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 <hr />
 <ol start="9" style="list-style-type: decimal">
 <li><strong>Repeat steps 5, 6, and 7 but now for “data/students.xlsx” (NB: You’ll need a function from the package <code>readxl</code>). Also try out the function <code>tail()</code> and <code>View()</code> (with a capital V).</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>students <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;data/students.xlsx&quot;</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(students)</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["student_number"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["grade"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["programme"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"5117250","2":"6.540712","3":"A"},{"1":"6562582","2":"7.572885","3":"A"},{"1":"6000241","2":"6.081056","3":"B"},{"1":"4862862","2":"7.707184","3":"A"},{"1":"6561723","2":"6.573150","3":"B"},{"1":"5625916","2":"7.900654","3":"B"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(students)</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["student_number"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["grade"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["programme"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"5062746","2":"7.426839","3":"B"},{"1":"6560954","2":"7.038757","3":"B"},{"1":"6120285","2":"6.713390","3":"A"},{"1":"6553913","2":"8.244182","3":"A"},{"1":"4181101","2":"5.624090","3":"B"},{"1":"4639846","2":"4.844375","3":"A"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 <hr />
 <ol start="10" style="list-style-type: decimal">
 <li><strong>Create a summary of the three columns in the students dataset using the <code>summary()</code> function. What is the range of the grades achieved by the students?</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(students)</span></code></pre></div>
-<pre><code>##  student_number        grade        programme        
-##  Min.   :4011659   Min.   :4.844   Length:37         
-##  1st Qu.:4862862   1st Qu.:6.390   Class :character  
-##  Median :6000241   Median :7.151   Mode  :character  
-##  Mean   :5686729   Mean   :6.991                     
-##  3rd Qu.:6553913   3rd Qu.:7.573                     
-##  Max.   :6997130   Max.   :9.291</code></pre>
 </div>
 <div id="data-transformation-with-dplyr-verbs" class="section level1">
 <h1>Data transformation with <code>dplyr</code> verbs</h1>
@@ -524,24 +463,12 @@ div.tocify {
 <li><strong>Look at the help pages for <code>filter()</code> (especially the examples) and show the students with a grade lower than 5.5</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(students, grade <span class="sc">&lt;</span> <span class="fl">5.5</span>)</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["student_number"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["grade"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["programme"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"6114656","2":"5.159602","3":"A"},{"1":"5265402","2":"5.487652","3":"B"},{"1":"4639846","2":"4.844375","3":"A"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 <hr />
 <ol start="12" style="list-style-type: decimal">
 <li><strong>Show only the students with a grade higher than 8 from programme A</strong></li>
 </ol>
 <hr />
 <p>If you are unsure how to proceed, read <a href="http://r4ds.had.co.nz/transform.html#logical-operators">Section 5.2.2 from R4DS</a>.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(students, grade <span class="sc">&gt;</span> <span class="dv">8</span>, programme <span class="sc">==</span> <span class="st">&quot;A&quot;</span>)</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["student_number"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["grade"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["programme"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"6352581","2":"8.091947","3":"A"},{"1":"6165611","2":"8.019184","3":"A"},{"1":"4133949","2":"8.397477","3":"A"},{"1":"4011659","2":"8.943093","3":"A"},{"1":"6553913","2":"8.244182","3":"A"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 </div>
 <div id="arrange" class="section level3">
 <h3>Arrange</h3>
@@ -551,12 +478,6 @@ div.tocify {
 <li><strong>Sort the students dataset such that the students from programme A are on top of the data frame and within the programmes the highest grades come first.</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(students, programme, <span class="sc">-</span>grade)</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["student_number"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["grade"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["programme"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"4011659","2":"8.943093","3":"A"},{"1":"4133949","2":"8.397477","3":"A"},{"1":"6553913","2":"8.244182","3":"A"},{"1":"6352581","2":"8.091947","3":"A"},{"1":"6165611","2":"8.019184","3":"A"},{"1":"6997130","2":"7.754851","3":"A"},{"1":"4862862","2":"7.707184","3":"A"},{"1":"6562582","2":"7.572885","3":"A"},{"1":"4483974","2":"7.463982","3":"A"},{"1":"5128923","2":"7.260540","3":"A"},{"1":"6827756","2":"6.802390","3":"A"},{"1":"6040650","2":"6.754859","3":"A"},{"1":"6580486","2":"6.728600","3":"A"},{"1":"6120285","2":"6.713390","3":"A"},{"1":"5117250","2":"6.540712","3":"A"},{"1":"6207923","2":"6.001035","3":"A"},{"1":"4096023","2":"5.916181","3":"A"},{"1":"6114656","2":"5.159602","3":"A"},{"1":"4639846","2":"4.844375","3":"A"},{"1":"6375078","2":"9.290566","3":"B"},{"1":"5625916","2":"7.900654","3":"B"},{"1":"4353370","2":"7.566583","3":"B"},{"1":"5210665","2":"7.511415","3":"B"},{"1":"5062746","2":"7.426839","3":"B"},{"1":"6889790","2":"7.330978","3":"B"},{"1":"5977188","2":"7.256302","3":"B"},{"1":"6921600","2":"7.193169","3":"B"},{"1":"4668787","2":"7.150634","3":"B"},{"1":"6560954","2":"7.038757","3":"B"},{"1":"6561723","2":"6.573150","3":"B"},{"1":"6960778","2":"6.421787","3":"B"},{"1":"5687211","2":"6.389711","3":"B"},{"1":"6000241","2":"6.081056","3":"B"},{"1":"4807286","2":"5.963946","3":"B"},{"1":"4181101","2":"5.624090","3":"B"},{"1":"6301091","2":"5.527946","3":"B"},{"1":"5265402","2":"5.487652","3":"B"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 </div>
 <div id="select" class="section level3">
 <h3>Select</h3>
@@ -566,19 +487,12 @@ div.tocify {
 <li><strong>Show only the <code>student_number</code> and <code>programme</code> columns from the students dataset</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(students, student_number, programme)</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["student_number"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["programme"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"5117250","2":"A"},{"1":"6562582","2":"A"},{"1":"6000241","2":"B"},{"1":"4862862","2":"A"},{"1":"6561723","2":"B"},{"1":"5625916","2":"B"},{"1":"4096023","2":"A"},{"1":"6114656","2":"A"},{"1":"5265402","2":"B"},{"1":"5977188","2":"B"},{"1":"6889790","2":"B"},{"1":"4807286","2":"B"},{"1":"6352581","2":"A"},{"1":"6207923","2":"A"},{"1":"5210665","2":"B"},{"1":"6040650","2":"A"},{"1":"4353370","2":"B"},{"1":"4483974","2":"A"},{"1":"6997130","2":"A"},{"1":"6827756","2":"A"},{"1":"6580486","2":"A"},{"1":"6165611","2":"A"},{"1":"4133949","2":"A"},{"1":"5687211","2":"B"},{"1":"5128923","2":"A"},{"1":"6921600","2":"B"},{"1":"6375078","2":"B"},{"1":"4668787","2":"B"},{"1":"4011659","2":"A"},{"1":"6960778","2":"B"},{"1":"6301091","2":"B"},{"1":"5062746","2":"B"},{"1":"6560954","2":"B"},{"1":"6120285","2":"A"},{"1":"6553913","2":"A"},{"1":"4181101","2":"B"},{"1":"4639846","2":"A"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># or, equivalently: select(students, -grade)</span></span></code></pre></div>
 </div>
 <div id="mutate" class="section level3">
 <h3>Mutate</h3>
 <p>With <code>mutate()</code> you can compute new columns and transform existing columns as functions of the columns in your dataset. For example, we may create a new logical column in the students dataset to indicate whether a student has passed or failed:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>students <span class="ot">&lt;-</span> <span class="fu">mutate</span>(students, <span class="at">pass =</span> grade <span class="sc">&gt;</span> <span class="fl">5.5</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>students</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>students <span class="ot">&lt;-</span> <span class="fu">mutate</span>(students, <span class="at">pass =</span> grade <span class="sc">&gt;</span> <span class="fl">5.5</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>students</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["student_number"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["grade"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["programme"],"name":[3],"type":["chr"],"align":["left"]},{"label":["pass"],"name":[4],"type":["lgl"],"align":["right"]}],"data":[{"1":"5117250","2":"6.540712","3":"A","4":"TRUE"},{"1":"6562582","2":"7.572885","3":"A","4":"TRUE"},{"1":"6000241","2":"6.081056","3":"B","4":"TRUE"},{"1":"4862862","2":"7.707184","3":"A","4":"TRUE"},{"1":"6561723","2":"6.573150","3":"B","4":"TRUE"},{"1":"5625916","2":"7.900654","3":"B","4":"TRUE"},{"1":"4096023","2":"5.916181","3":"A","4":"TRUE"},{"1":"6114656","2":"5.159602","3":"A","4":"FALSE"},{"1":"5265402","2":"5.487652","3":"B","4":"FALSE"},{"1":"5977188","2":"7.256302","3":"B","4":"TRUE"},{"1":"6889790","2":"7.330978","3":"B","4":"TRUE"},{"1":"4807286","2":"5.963946","3":"B","4":"TRUE"},{"1":"6352581","2":"8.091947","3":"A","4":"TRUE"},{"1":"6207923","2":"6.001035","3":"A","4":"TRUE"},{"1":"5210665","2":"7.511415","3":"B","4":"TRUE"},{"1":"6040650","2":"6.754859","3":"A","4":"TRUE"},{"1":"4353370","2":"7.566583","3":"B","4":"TRUE"},{"1":"4483974","2":"7.463982","3":"A","4":"TRUE"},{"1":"6997130","2":"7.754851","3":"A","4":"TRUE"},{"1":"6827756","2":"6.802390","3":"A","4":"TRUE"},{"1":"6580486","2":"6.728600","3":"A","4":"TRUE"},{"1":"6165611","2":"8.019184","3":"A","4":"TRUE"},{"1":"4133949","2":"8.397477","3":"A","4":"TRUE"},{"1":"5687211","2":"6.389711","3":"B","4":"TRUE"},{"1":"5128923","2":"7.260540","3":"A","4":"TRUE"},{"1":"6921600","2":"7.193169","3":"B","4":"TRUE"},{"1":"6375078","2":"9.290566","3":"B","4":"TRUE"},{"1":"4668787","2":"7.150634","3":"B","4":"TRUE"},{"1":"4011659","2":"8.943093","3":"A","4":"TRUE"},{"1":"6960778","2":"6.421787","3":"B","4":"TRUE"},{"1":"6301091","2":"5.527946","3":"B","4":"TRUE"},{"1":"5062746","2":"7.426839","3":"B","4":"TRUE"},{"1":"6560954","2":"7.038757","3":"B","4":"TRUE"},{"1":"6120285","2":"6.713390","3":"A","4":"TRUE"},{"1":"6553913","2":"8.244182","3":"A","4":"TRUE"},{"1":"4181101","2":"5.624090","3":"B","4":"TRUE"},{"1":"4639846","2":"4.844375","3":"A","4":"FALSE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -609,9 +523,6 @@ div.tocify {
 <li><strong>Use <code>mutate()</code> and <code>recode()</code> to change the codes in the programme column of the students dataset to their names. Store the result in a variable called <code>students_recoded</code></strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>students_recoded <span class="ot">&lt;-</span> <span class="fu">mutate</span>(students, </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">programme =</span> <span class="fu">recode</span>(programme, <span class="st">&quot;A&quot;</span> <span class="ot">=</span> <span class="st">&quot;Science&quot;</span>, <span class="st">&quot;B&quot;</span> <span class="ot">=</span> <span class="st">&quot;Social Science&quot;</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p><a href="http://r4ds.had.co.nz/transform.html#dplyr-basics">Chapter 5 of R4DS</a> neatly summarises the five key dplyr functions that allow you to solve the vast majority of your data manipulation challenges:</p>
 <ul>
 <li>Pick observations by their values (<code>filter()</code>).</li>
@@ -626,14 +537,14 @@ div.tocify {
 <h1>Data processing pipelines</h1>
 <p>A very useful feature in tidyverse is the pipe <code>%&gt;%</code>. The pipe inputs the result from the left-hand side as the first argument of the right-hand side function: <code>filter(students, grade &gt; 5.5)</code> becomes <code>students %&gt;% filter(grade &gt; 5.5)</code>. With the pipe, a set of processing steps becomes a neatly legible data processing pipeline!</p>
 <p>Different tasks we have performed on the students dataset can be done in one pipeline like so:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>students_dataset <span class="ot">&lt;-</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_xlsx</span>(<span class="st">&quot;data/students.xlsx&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prog =</span> <span class="fu">recode</span>(programme, <span class="st">&quot;A&quot;</span> <span class="ot">=</span> <span class="st">&quot;Science&quot;</span>, <span class="st">&quot;B&quot;</span> <span class="ot">=</span> <span class="st">&quot;Social Science&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(grade <span class="sc">&gt;</span> <span class="fl">5.5</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(programme, <span class="sc">-</span>grade) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(student_number, prog, grade)</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>students_dataset</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>students_dataset <span class="ot">&lt;-</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_xlsx</span>(<span class="st">&quot;data/students.xlsx&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prog =</span> <span class="fu">recode</span>(programme, <span class="st">&quot;A&quot;</span> <span class="ot">=</span> <span class="st">&quot;Science&quot;</span>, <span class="st">&quot;B&quot;</span> <span class="ot">=</span> <span class="st">&quot;Social Science&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(grade <span class="sc">&gt;</span> <span class="fl">5.5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(programme, <span class="sc">-</span>grade) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(student_number, prog, grade)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>students_dataset</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["student_number"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["prog"],"name":[2],"type":["chr"],"align":["left"]},{"label":["grade"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"4011659","2":"Science","3":"8.943093"},{"1":"4133949","2":"Science","3":"8.397477"},{"1":"6553913","2":"Science","3":"8.244182"},{"1":"6352581","2":"Science","3":"8.091947"},{"1":"6165611","2":"Science","3":"8.019184"},{"1":"6997130","2":"Science","3":"7.754851"},{"1":"4862862","2":"Science","3":"7.707184"},{"1":"6562582","2":"Science","3":"7.572885"},{"1":"4483974","2":"Science","3":"7.463982"},{"1":"5128923","2":"Science","3":"7.260540"},{"1":"6827756","2":"Science","3":"6.802390"},{"1":"6040650","2":"Science","3":"6.754859"},{"1":"6580486","2":"Science","3":"6.728600"},{"1":"6120285","2":"Science","3":"6.713390"},{"1":"5117250","2":"Science","3":"6.540712"},{"1":"6207923","2":"Science","3":"6.001035"},{"1":"4096023","2":"Science","3":"5.916181"},{"1":"6375078","2":"Social Science","3":"9.290566"},{"1":"5625916","2":"Social Science","3":"7.900654"},{"1":"4353370","2":"Social Science","3":"7.566583"},{"1":"5210665","2":"Social Science","3":"7.511415"},{"1":"5062746","2":"Social Science","3":"7.426839"},{"1":"6889790","2":"Social Science","3":"7.330978"},{"1":"5977188","2":"Social Science","3":"7.256302"},{"1":"6921600","2":"Social Science","3":"7.193169"},{"1":"4668787","2":"Social Science","3":"7.150634"},{"1":"6560954","2":"Social Science","3":"7.038757"},{"1":"6561723","2":"Social Science","3":"6.573150"},{"1":"6960778","2":"Social Science","3":"6.421787"},{"1":"5687211","2":"Social Science","3":"6.389711"},{"1":"6000241","2":"Social Science","3":"6.081056"},{"1":"4807286","2":"Social Science","3":"5.963946"},{"1":"4181101","2":"Social Science","3":"5.624090"},{"1":"6301091","2":"Social Science","3":"5.527946"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -646,32 +557,18 @@ div.tocify {
 </ol>
 <hr />
 <p>If you find duplicates, you may need to use <code>distinct(App, .keep_all = TRUE)</code> as the last step in your pipeline to remove duplicate app names. Tip: <code>ctrl/cmd + shift + M</code> inserts a pipe operator in RStudio.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>popular_apps <span class="ot">&lt;-</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_csv</span>(<span class="st">&quot;data/googleplaystore.csv&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Downloads =</span> <span class="fu">parse_number</span>(Installs)) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Downloads <span class="sc">&gt;</span> <span class="fl">5e8</span>) <span class="sc">%&gt;%</span> <span class="co"># 5e8 is the same as 5 x 10^8</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span>Rating) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(App, Rating, Reviews, Downloads, Category) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(App, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>popular_apps</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["App"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Rating"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Reviews"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Downloads"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Category"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"Subway Surfers","2":"4.5","3":"27722264","4":"1e+09","5":"GAME"},{"1":"Instagram","2":"4.5","3":"66577313","4":"1e+09","5":"SOCIAL"},{"1":"Google Photos","2":"4.5","3":"10858556","4":"1e+09","5":"PHOTOGRAPHY"},{"1":"WhatsApp Messenger","2":"4.4","3":"69119316","4":"1e+09","5":"COMMUNICATION"},{"1":"Google","2":"4.4","3":"8033493","4":"1e+09","5":"TOOLS"},{"1":"Google Drive","2":"4.4","3":"2731171","4":"1e+09","5":"PRODUCTIVITY"},{"1":"Google Chrome: Fast & Secure","2":"4.3","3":"9642995","4":"1e+09","5":"COMMUNICATION"},{"1":"Gmail","2":"4.3","3":"4604324","4":"1e+09","5":"COMMUNICATION"},{"1":"Google Play Games","2":"4.3","3":"7165362","4":"1e+09","5":"ENTERTAINMENT"},{"1":"Maps - Navigate & Explore","2":"4.3","3":"9235155","4":"1e+09","5":"TRAVEL_AND_LOCAL"},{"1":"YouTube","2":"4.3","3":"25655305","4":"1e+09","5":"VIDEO_PLAYERS"},{"1":"Google+","2":"4.2","3":"4831125","4":"1e+09","5":"SOCIAL"},{"1":"Google Street View","2":"4.2","3":"2129689","4":"1e+09","5":"TRAVEL_AND_LOCAL"},{"1":"Skype - free IM & video calls","2":"4.1","3":"10484169","4":"1e+09","5":"COMMUNICATION"},{"1":"Facebook","2":"4.1","3":"78158306","4":"1e+09","5":"SOCIAL"},{"1":"Messenger \\x96 Text and Video Chat for Free","2":"4.0","3":"56642847","4":"1e+09","5":"COMMUNICATION"},{"1":"Hangouts","2":"4.0","3":"3419249","4":"1e+09","5":"COMMUNICATION"},{"1":"Google Play Books","2":"3.9","3":"1433233","4":"1e+09","5":"BOOKS_AND_REFERENCE"},{"1":"Google News","2":"3.9","3":"877635","4":"1e+09","5":"NEWS_AND_MAGAZINES"},{"1":"Google Play Movies & TV","2":"3.7","3":"906384","4":"1e+09","5":"VIDEO_PLAYERS"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 </div>
 <div id="grouping-and-summarisation" class="section level1">
 <h1>Grouping and summarisation</h1>
 <p>We have now seen how we can transform and clean our datasets. The next step is to start exploring the dataset by computing relevant summary statistics, such as means, ranges, variances, differences, etc. We have already used the function <code>summary()</code> which comes with <code>R</code>, but <code>dplyr</code> has extra summary functionality in the form of the <code>summarise()</code> (or <code>summarize()</code>) verb.</p>
 <p>An example to get the mean grade of the <code>students_dataset</code> we made earlier is below:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>students_dataset <span class="sc">%&gt;%</span> </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(grade), </span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">variance =</span> <span class="fu">var</span>(grade), </span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(grade), </span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(grade)</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>students_dataset <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(grade), </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">variance =</span> <span class="fu">var</span>(grade), </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(grade), </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(grade)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mean"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["variance"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["min"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["max"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"7.151767","2":"0.8172892","3":"5.527946","4":"9.290566"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -682,23 +579,12 @@ div.tocify {
 <li><strong>Show the median, minimum, and maximum for the popular apps dataset you made in the previous assignment.</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>popular_apps <span class="sc">%&gt;%</span> </span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">med =</span> <span class="fu">median</span>(Rating),</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(Rating), </span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(Rating)</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["med"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["min"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["max"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"4.3","2":"3.7","3":"4.5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 <p>The <code>summarise()</code> function works with any function that takes a vector of numbers and outputs a single number. For example, we can create our own <a href="https://en.wikipedia.org/wiki/Median_absolute_deviation">Median Absolute Deviation (MAD)</a> function:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>mad <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median</span>(<span class="fu">abs</span>(x <span class="sc">-</span> <span class="fu">median</span>(x)))</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>students_dataset <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mad =</span> <span class="fu">mad</span>(grade))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mad <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median</span>(<span class="fu">abs</span>(x <span class="sc">-</span> <span class="fu">median</span>(x)))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>students_dataset <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mad =</span> <span class="fu">mad</span>(grade))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mad"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.5908503"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -709,27 +595,15 @@ div.tocify {
 <li><strong>Add the median absolute deviation to the summaries you made before</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>popular_apps <span class="sc">%&gt;%</span> </span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">med =</span> <span class="fu">median</span>(Rating),</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(Rating), </span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(Rating),</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mad =</span> <span class="fu">mad</span>(Rating)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["med"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["min"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["max"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["mad"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"4.3","2":"3.7","3":"4.5","4":"0.15"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 <p>By itself, the <code>summarise()</code> function is not very useful; we can also simply use the <code>summary()</code> function or directly enter the vector we are interested in as an argument to the functions: <code>mad(students_dataset$grade)</code> = 0.5908503. The power of <code>summarise()</code> is in its combined use with the <code>group_by()</code> function, which makes it easy to make grouped summaries:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>students_dataset <span class="sc">%&gt;%</span> </span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prog) <span class="sc">%&gt;%</span> </span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(grade), </span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">variance =</span> <span class="fu">var</span>(grade), </span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(grade), </span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(grade)</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>students_dataset <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prog) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(grade), </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">variance =</span> <span class="fu">var</span>(grade), </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(grade), </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(grade)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["prog"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["variance"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["min"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["max"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Science","2":"7.347794","3":"0.7356909","4":"5.916181","5":"8.943093"},{"1":"Social Science","2":"6.955740","3":"0.8683117","4":"5.527946","5":"9.290566"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -740,19 +614,6 @@ div.tocify {
 <li><strong>Create a grouped summary of the ratings per category in the popular apps dataset.</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>popular_apps <span class="sc">%&gt;%</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Category) <span class="sc">%&gt;%</span> </span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">med =</span> <span class="fu">median</span>(Rating),</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(Rating), </span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(Rating),</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mad =</span> <span class="fu">mad</span>(Rating)</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Category"],"name":[1],"type":["chr"],"align":["left"]},{"label":["med"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["min"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["max"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["mad"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"BOOKS_AND_REFERENCE","2":"3.90","3":"3.9","4":"3.9","5":"0.00"},{"1":"COMMUNICATION","2":"4.20","3":"4.0","4":"4.4","5":"0.15"},{"1":"ENTERTAINMENT","2":"4.30","3":"4.3","4":"4.3","5":"0.00"},{"1":"GAME","2":"4.50","3":"4.5","4":"4.5","5":"0.00"},{"1":"NEWS_AND_MAGAZINES","2":"3.90","3":"3.9","4":"3.9","5":"0.00"},{"1":"PHOTOGRAPHY","2":"4.50","3":"4.5","4":"4.5","5":"0.00"},{"1":"PRODUCTIVITY","2":"4.40","3":"4.4","4":"4.4","5":"0.00"},{"1":"SOCIAL","2":"4.20","3":"4.1","4":"4.5","5":"0.10"},{"1":"TOOLS","2":"4.40","3":"4.4","4":"4.4","5":"0.00"},{"1":"TRAVEL_AND_LOCAL","2":"4.25","3":"4.2","4":"4.3","5":"0.05"},{"1":"VIDEO_PLAYERS","2":"4.00","3":"3.7","4":"4.3","5":"0.30"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 </div>
 <div id="final-exercise" class="section level1">
 <h1>Final exercise</h1>
@@ -761,20 +622,6 @@ div.tocify {
 <li><strong>Create an interesting summary based on the Google play store apps dataset. An example could be “do games get higher ratings than communication apps?”</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;data/googleplaystore.csv&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Category <span class="sc">==</span> <span class="st">&quot;GAME&quot;</span> <span class="sc">|</span> Category <span class="sc">==</span> <span class="st">&quot;COMMUNICATION&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(App, Category, Rating) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(App, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Category) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(Rating, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="fu">median</span>(Rating, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Category"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["median"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"COMMUNICATION","2":"4.121401","3":"4.2"},{"1":"GAME","2":"4.247645","3":"4.3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
 </div>
 
 
