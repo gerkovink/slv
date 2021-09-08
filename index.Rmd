@@ -204,3 +204,34 @@ Naturally, you will need internet access for these services to be accessed.
 ### Lecture (Wednesday 9am - online)
 
 [**You can find the lecture meeting here**](https://teams.microsoft.com/l/meetup-join/19%3a4a155a8069ec4218a0efe4ee8fdaa2cf%40thread.tacv2/1630956947631?context=%7b%22Tid%22%3a%22d72758a0-a446-4e0f-a0aa-4bf95a4a10e7%22%2c%22Oid%22%3a%22cc7d7fcd-73aa-4668-936a-2ca38cace0f3%22%7d)
+
+- [Lecture Slides](lectures/L1/Lecture-1.html)
+
+### Practical
+This week's practical is on data wrangling
+
+Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021).
+
+If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from one of my other courses. There you can find video walkthroughs that detail the process. 
+
+### A must watch
+In this video Hadley talks `tidyverse`.
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/izFssYRsLZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+## Column 2
+
+### Required reading
+
+Study the following materials
+
+- [ISLR V2 Chapter 1](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
+- [R4DS Chapters 1 and 9 - 16](https://r4ds.had.co.nz)
+
+### Useful links
+The following links may be useful
+
+- [Gerko's quick `R` scripting course with video walkthroughs](https://www.gerkovink.com/prepR/)
+- [ISLR's web page](https://www.statlearning.com)
+
