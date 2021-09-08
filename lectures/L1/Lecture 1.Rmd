@@ -4,7 +4,9 @@ author: "Gerko Vink"
 date: "Supervised Learning and Visualization"
 output: 
   ioslides_presentation:
-    smaller: true
+    logo: logo.png
+    smaller: yes
+    widescreen: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -381,7 +383,6 @@ Data wrangling is the process of transforming and mapping data from one "raw" da
 - **Publishing**: Prepare the data set for use downstream, which could include use for users or software. Be sure to document any steps and logic during wrangling.
 
 [Source: Trifacta](https://www.trifacta.com/data-wrangling/)
-
 
 ## To Do
 
