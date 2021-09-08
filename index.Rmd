@@ -4,6 +4,7 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: scroll
+    self_contained: false
 ---
 
 ```{r setup, include=FALSE}
@@ -203,7 +204,7 @@ Naturally, you will need internet access for these services to be accessed.
 
 ### Lecture (Wednesday 9am - online)
 
-[**You can find the lecture meeting here**](https://teams.microsoft.com/l/meetup-join/19%3a4a155a8069ec4218a0efe4ee8fdaa2cf%40thread.tacv2/1630956947631?context=%7b%22Tid%22%3a%22d72758a0-a446-4e0f-a0aa-4bf95a4a10e7%22%2c%22Oid%22%3a%22cc7d7fcd-73aa-4668-936a-2ca38cace0f3%22%7d)
+**You can find** [**the lecture meeting here**](https://teams.microsoft.com/l/meetup-join/19%3a4a155a8069ec4218a0efe4ee8fdaa2cf%40thread.tacv2/1630956947631?context=%7b%22Tid%22%3a%22d72758a0-a446-4e0f-a0aa-4bf95a4a10e7%22%2c%22Oid%22%3a%22cc7d7fcd-73aa-4668-936a-2ca38cace0f3%22%7d)
 
 - [Lecture Slides](lectures/L1/Lecture-1.html)
 
@@ -215,10 +216,9 @@ Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021).
 If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from one of my other courses. There you can find video walkthroughs that detail the process. 
 
 ### A must watch
-In [this video](https://youtu.be/izFssYRsLZs) Hadley talks `tidyverse`.
-<center>
-<iframe width="500" height="300" src="https://www.youtube-nocookie.com/embed/izFssYRsLZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+In [this video](https://youtu.be/izFssYRsLZs) Hadley talks `tidyverse`. 
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/izFssYRsLZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Column 2
 
