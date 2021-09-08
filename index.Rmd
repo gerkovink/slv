@@ -212,7 +212,7 @@ Naturally, you will need internet access for these services to be accessed.
 This week's practical is on data wrangling. The answers are also given to you. Use these answers to help yourself when you're stuck. 
 
 - [Practical 1: Data wrangling](practicals/01_Data_Wrangling/01_Data_Wrangling.html)
-- [Practical 1: Data wrangling](practicals/01_Data_Wrangling/01_Data_Wrangling_Answers.html)
+- [Practical 1: Data wrangling with answers](practicals/01_Data_Wrangling/01_Data_Wrangling_Answers.html)
 
 Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
 
