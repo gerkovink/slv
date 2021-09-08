@@ -1,8 +1,8 @@
 ---
 title: "Data wrangling"
 params:
-  #answers: true # uncomment if answers are to be included
-  answers: false
+  answers: true # uncomment if answers are to be included
+  # answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -14,8 +14,8 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    #pandoc_args: --output=01_Data_Wrangling_Answers.html # uncomment if answers are to be included
-    pandoc_args: --output=01_Data_Wrangling.html
+    pandoc_args: --output=01_Data_Wrangling_Answers.html # uncomment if answers are to be included
+    # pandoc_args: --output=01_Data_Wrangling.html
 ---
 
 # Introduction
@@ -437,4 +437,4 @@ When you have finished the practical,
 
 - enclose all files of the project `01_Data_wrangling.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
 
-- hand in the zip file before the start of the next lecture on Wednesday 13:15 to Blackboard ("PRACTICAL: DATA MANIPULATION & EDA").
+- hand in the zip by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 3. That way we can iron out issues during the next Q&A in Week 2. 
