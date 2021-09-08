@@ -216,9 +216,15 @@ Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021).
 If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from one of my other courses. There you can find video walkthroughs that detail the process. 
 
 ### A must watch
-In [this video](https://youtu.be/izFssYRsLZs) Hadley talks `tidyverse`. 
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/izFssYRsLZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+The below 4-part series by Garrett Grolemund on `dplyr` and the `tidyverse` is very informative:
+<br>
+<center>
+<iframe width="200" height="100" src="https://www.youtube-nocookie.com/embed/jOd65mR1zfw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="200" height="100" src="https://www.youtube-nocookie.com/embed/1ELALQlO-yM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<iframe width="200" height="100" src="https://www.youtube-nocookie.com/embed/Zc_ufg4uW4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="200" height="100" src="https://www.youtube-nocookie.com/embed/AuBgYDCg1Cg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
 ## Column 2
 
