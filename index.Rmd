@@ -215,9 +215,9 @@ Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021).
 If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from one of my other courses. There you can find video walkthroughs that detail the process. 
 
 ### A must watch
-In this video Hadley talks `tidyverse`.
+In [this video](https://youtu.be/izFssYRsLZs) Hadley talks `tidyverse`.
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/izFssYRsLZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="500" height="300" src="https://www.youtube-nocookie.com/embed/izFssYRsLZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
 ## Column 2
@@ -234,4 +234,3 @@ The following links may be useful
 
 - [Gerko's quick `R` scripting course with video walkthroughs](https://www.gerkovink.com/prepR/)
 - [ISLR's web page](https://www.statlearning.com)
-
