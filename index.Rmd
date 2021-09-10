@@ -213,6 +213,9 @@ This week's practical is on data wrangling. The answers are also given to you. U
 
 - [Practical 1: Data wrangling](practicals/01_Data_Wrangling/01_Data_Wrangling.html)
 - [Practical 1: Data wrangling with answers](practicals/01_Data_Wrangling/01_Data_Wrangling_Answers.html)
+- [googleplaystore.csv](practicals/01_Data_Wrangling/data/googleplaystore.csv)
+- [students.xlsx](practicals/01_Data_Wrangling/data/students.xlsx)
+- [SLV_practical1 - or create your own project](practicals/01_Data_Wrangling/SLV_practical1.zip)
 
 Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
 
