@@ -543,8 +543,7 @@ div.tocify {
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(grade <span class="sc">&gt;</span> <span class="fl">5.5</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(programme, <span class="sc">-</span>grade) <span class="sc">%&gt;%</span> </span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(student_number, prog, grade)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>students_dataset</span></code></pre></div>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>students_dataset</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["student_number"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["prog"],"name":[2],"type":["chr"],"align":["left"]},{"label":["grade"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"4011659","2":"Science","3":"8.943093"},{"1":"4133949","2":"Science","3":"8.397477"},{"1":"6553913","2":"Science","3":"8.244182"},{"1":"6352581","2":"Science","3":"8.091947"},{"1":"6165611","2":"Science","3":"8.019184"},{"1":"6997130","2":"Science","3":"7.754851"},{"1":"4862862","2":"Science","3":"7.707184"},{"1":"6562582","2":"Science","3":"7.572885"},{"1":"4483974","2":"Science","3":"7.463982"},{"1":"5128923","2":"Science","3":"7.260540"},{"1":"6827756","2":"Science","3":"6.802390"},{"1":"6040650","2":"Science","3":"6.754859"},{"1":"6580486","2":"Science","3":"6.728600"},{"1":"6120285","2":"Science","3":"6.713390"},{"1":"5117250","2":"Science","3":"6.540712"},{"1":"6207923","2":"Science","3":"6.001035"},{"1":"4096023","2":"Science","3":"5.916181"},{"1":"6375078","2":"Social Science","3":"9.290566"},{"1":"5625916","2":"Social Science","3":"7.900654"},{"1":"4353370","2":"Social Science","3":"7.566583"},{"1":"5210665","2":"Social Science","3":"7.511415"},{"1":"5062746","2":"Social Science","3":"7.426839"},{"1":"6889790","2":"Social Science","3":"7.330978"},{"1":"5977188","2":"Social Science","3":"7.256302"},{"1":"6921600","2":"Social Science","3":"7.193169"},{"1":"4668787","2":"Social Science","3":"7.150634"},{"1":"6560954","2":"Social Science","3":"7.038757"},{"1":"6561723","2":"Social Science","3":"6.573150"},{"1":"6960778","2":"Social Science","3":"6.421787"},{"1":"5687211","2":"Social Science","3":"6.389711"},{"1":"6000241","2":"Social Science","3":"6.081056"},{"1":"4807286","2":"Social Science","3":"5.963946"},{"1":"4181101","2":"Social Science","3":"5.624090"},{"1":"6301091","2":"Social Science","3":"5.527946"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -583,8 +582,7 @@ div.tocify {
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mad <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median</span>(<span class="fu">abs</span>(x <span class="sc">-</span> <span class="fu">median</span>(x)))</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>students_dataset <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mad =</span> <span class="fu">mad</span>(grade))</span></code></pre></div>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>students_dataset <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mad =</span> <span class="fu">mad</span>(grade))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mad"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.5908503"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -622,6 +620,14 @@ div.tocify {
 <li><strong>Create an interesting summary based on the Google play store apps dataset. An example could be “do games get higher ratings than communication apps?”</strong></li>
 </ol>
 <hr />
+</div>
+<div id="hand-in" class="section level1">
+<h1>Hand-in</h1>
+<p>When you have finished the practical,</p>
+<ul>
+<li><p>enclose all files of the project <code>01_Data_wrangling.Rproj</code> (i.e. all <code>.R</code> and/or <code>.Rmd</code> files including the one with your answers, and the <code>.Rproj</code> file) in a zip file, and</p></li>
+<li><p>hand in the zip by PR from your fork <a href="https://github.com/gerkovink/INFOMDA1-2021">here</a>. Do so before Lecture 3. That way we can iron out issues during the next Q&amp;A in Week 2.</p></li>
+</ul>
 </div>
 
 
