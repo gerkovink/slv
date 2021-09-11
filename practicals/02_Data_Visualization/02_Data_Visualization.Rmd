@@ -1,7 +1,8 @@
 ---
 title: "Data Visualisation using ggplot2"
 params:
-  answers: true
+  answers: true # uncomment if answers are to be included
+  # answers: false #uncomment if answers are not to be included
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,12 +14,12 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    pandoc_args: --output=02_Data_Visualisation_answers.html
+    pandoc_args: --output=02_Data_Visualisation_answers.html # uncomment if answers are to be included
 ---
 
 # Introduction
 
-In this practical, we will learn how to visualise data after we have cleaned up our datasets using the `dplyr` verbs from the previous practical: `filter()`, `arrange()`, `mutate()`, `select()`, and `summarise()`. For the visualisations, we will be using a package that implements the grammar of graphics: `ggplot2`. Please review the lecture slide for week 2 beforehand.
+In this practical, we will learn how to visualise data after we have cleaned up our datasets using the `dplyr` verbs from the previous practical: `filter()`, `arrange()`, `mutate()`, `select()`, and `summarise()`. For the visualisations, we will be using a package that implements the grammar of graphics: `ggplot2`. Please review the lecture slides for week 2 beforehand.
 
 Don't forget to open the project file `02_Data_Visualisation.Rproj` and to create your `.Rmd` or `.R` file to work in.
 
@@ -479,3 +480,11 @@ Carseats %>%
   facet_wrap(vars(ShelveLoc))
 ```
 
+# Hand-in
+
+When you have finished the practical, 
+
+
+- enclose all files of the project `02_Data_Visualization.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+
+- hand in the zip by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 4. That way we can iron out issues during the next Q&A in Week 3. 
