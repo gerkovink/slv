@@ -296,7 +296,6 @@ students_dataset <-
   filter(grade > 5.5) %>% 
   arrange(programme, -grade) %>% 
   select(student_number, prog, grade)
-
 students_dataset
 ```
 
@@ -318,7 +317,6 @@ popular_apps <-
   arrange(-Rating) %>% 
   select(App, Rating, Reviews, Downloads, Category) %>% 
   distinct(App, .keep_all = TRUE)
-
 popular_apps
 ```
 
@@ -359,7 +357,6 @@ The `summarise()` function works with any function that takes a vector of number
 mad <- function(x) {
   median(abs(x - median(x)))
 }
-
 students_dataset %>% summarise(mad = mad(grade))
 ```
 
@@ -391,7 +388,6 @@ students_dataset %>%
     min = min(grade), 
     max = max(grade)
   )
-
 ```
 ---
 

@@ -1,0 +1,28 @@
+---
+title: "Example answers"
+author: "Firstname Lastname"
+date: "28-9-2018"
+mainfont: Arial
+fontsize: 12pt
+urlcolor: blue
+output: 
+  pdf_document:
+    latex_engine: xelatex
+---
+
+Here is an example file you can write.
+
+First, load the packages:
+
+```{r load_packages}
+library(ISLR)
+library(tidyverse)
+```
+
+1. Inspect the data
+
+```{r objects}
+head(Hitters)
+```
+
+2. And so on...
