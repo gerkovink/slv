@@ -1,0 +1,235 @@
+---
+title: "Exploratory Data Analysis"
+params:
+  answers: true # uncomment if answers are to be included
+  # answers: false
+mainfont: Arial
+fontsize: 12pt
+urlcolor: blue
+output: 
+  html_document:
+    toc: true
+    toc_depth: 1
+    toc_float: true
+    df_print: paged
+    theme: paper
+    highlight: pygments
+    pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
+---
+
+# Introduction 
+
+In this practical, we will build upon the topics of the last two weeks, and deepen your understanding of various data wrangling and visualization techniques, using the `tidyverse` functionalities. Additionally, we briefly introduce the concept of missing data and how to visualize relations between the data and missingness.
+
+Don’t forget to open the project file `03_Exploratory.Rproj` and to create your `.Rmd` or `.R` file to work in.
+
+```{r load_packages, message = FALSE}
+library(tidyverse)
+library(magrittr)
+library(mice)
+library(DAAG)
+```
+
+
+# The `boys` data
+
+Today, we will work with the `boys` data from the `R` package `mice`, containing information from a sample of `r nrow(boys)`. Information about this data can be obtained by running the code `?mice::boys`.
+
+When working with a new data set, it is always a good idea to get a grasp of the structure of the data.
+
+```{r}
+head(boys)
+tail(boys)
+```
+
+It seems like the data is sorted on the variable `age`. To verify this, we can test our intuition explicitly.
+
+```{r}
+!is.unsorted(boys$age)
+```
+
+Indeed, the data is sorted on `age`. In `R`, there is no `is.sorted` function, but we can test whether the data is sorted by testing whether the data is not unsorted.
+
+Additionally, you saw that the data contains `r ncol(boys)` variables (`r colnames(boys)`), and that the data suffers from missingness. To get a further understanding of the data, we can ask for a summary of all variables.
+
+```{r}
+summary(boys)
+```
+
+Next to looking at the numbers, it is often insightful to visualize some of the univariate distributions of the data, for example `age` and `gen` (genital Tanner stage).
+
+__1. Create a histogram of the variable `age` using the function `geom_histogram()`.__
+
+```{r, include = params$answers}
+boys %>%
+  ggplot(aes(x = age)) +
+  geom_histogram(fill = "dark green") +
+  theme_minimal() +
+  labs(title = "Distribution of age")
+
+# Most boys are relatively young, while there is
+# also a substantial group of boys between the age
+# of 10 and 20 years.
+```
+
+__2. Create a bar chart of the variable `gen` using the function `geom_bar()`.__
+
+```{r, include = params$answers}
+boys %>%
+  ggplot(aes(x = gen)) +
+  geom_bar(fill = "dark green") +
+  theme_minimal() +
+  labs(title = "Distribution of genital Tanner stage")
+```
+
+
+# Assessing missing data
+
+Now we know that there is a substantial amount of missing data, it is time to assess how severe the missingness problem is. One way to do this is by asking for the missing data pattern, using the function `md.pattern()` from `mice`.
+
+```{r}
+md.pattern(boys)
+```
+
+The `md.pattern` shows that there are 223 cases without any missing values, that `r nrow(boys) - 223` observations <ins>with</ins> at least one value missing, and that there are 1622 missing values in total in the data, such that `r round(sum(is.na(boys)) / prod(dim(boys)) * 100)`% of the data is missing.
+
+Also, it becomes clear that the variables `gen` (genital Tanner stage), `phb` (pubic hair) and `tv` (testicular volume) have most missing values.
+
+Now we now that there is a substantial amount of missing information in the `boys` data, we can more closely focus on the missing data patterns. A first step could be to test whether missingness in the variables `gen`, `phb` and `tv` depends on someones age.
+
+__3. Create a missingness indicator for the variables `gen`, `phb` and `tv`.__
+
+```{r, include = params$answers}
+boys_mis <- boys %>%
+  mutate(gen_mis = is.na(gen),
+         phb_mis = is.na(phb),
+         tv_mis  = is.na(tv))
+```
+
+__4. Assess whether missingness in the variables `gen`, `phb` and `tv` is related to someones age.__
+
+_Hint:_ Use the `group_by()` and `summarize()` functions from the `dplyr` library.
+
+
+```{r, include = params$answers}
+boys_mis %>%
+  group_by(gen_mis) %>%
+  summarize(age = mean(age))
+
+boys_mis %>%
+  group_by(phb_mis) %>%
+  summarize(age = mean(age))
+
+boys_mis %>%
+  group_by(tv_mis) %>%
+  summarize(age = mean(age))
+# And we see that those with a missing value on the variables
+# of interest have a substantial lower age than those with an
+# actual value.
+```
+
+Although such differences can be useful, they rarely tell the complete story about the missingness. A useful strategy to assess missing data patterns is visualization, as graphs generally tell more than just plain numbers.
+
+__5. Create a histogram for the variable `age`, faceted by whether or not someone has a missing value on `gen`.__
+
+_Hint:_ Use the function `facet_wrap` (see `help(facet_wrap)`) to create two separate histograms for both groups.
+
+```{r, include = params$answers}
+boys_mis %>%
+  ggplot(aes(x = age)) +
+  geom_histogram(fill = "dark green") + 
+  facet_wrap(~gen_mis) +
+  theme_minimal()
+
+
+# Now we see what we couldn't have seen before. Boys
+# with an observed value on gen all are at least seven
+# years old, while those with a missing value on gen
+# are far more often between 0 and 5 years old.
+```
+
+Now we know somewhat more about the missingness problem in the `boys` dataset, we can continue visualizing other relationships in the data. The next step is to visualize the relationship between `age` and `bmi`.
+
+__6. Create a scatterplot with `age` on the x-axis and `bmi` on the y-axis, using the function `geom_point()`.__
+
+```{r, include = params$answers}
+boys_mis %>%
+  ggplot(aes(x = age, y = bmi)) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = "Scatter plot of age versus bmi")
+
+# Note that ggplot gives the warning that 21 rows are
+# removed due to missingness in bmi.
+```
+
+Although we already know how missingness in the variable `gen` is related to `age`, we do not know whether `gen` is also related to `bmi`.
+
+__7. Add a colour aesthetic to the previous plot using the missingness indicator of the variable `gen`.__
+
+```{r, include = params$answers}
+boys_mis %>%
+  ggplot(aes(x = age, y = bmi, col = gen_mis)) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_viridis_d() +
+  labs(title = "Scatter plot of age versus bmi")
+
+# Again, we clearly see that younger boys generally have 
+# a missing value on gen, while there does not seem to be
+# much of a relation between missingness on gen and bmi
+```
+
+So far, we have looked at whether the missingness in `gen` is related to someones age. We will now look a little further and assess the relationship between `gen` and `age`.
+
+Usually, we would now handle the missingness problem accordingly. Yet, the scope of this course does not allow for a thorough module on dealing with missing data. If you are interested in this topic, or if you will need it during future (course)work, there are plenty of online resources. The short list of resources displayed below should get you going.
+
+| Description| Author & Title | Link |
+|:-----------|:---------------|:-------|
+| Missing data theory | Van Buuren - Flexible Imputation of Missing Data | [Click](https://stefvanbuuren.name/fimd/) |
+| Missing data theory (somewhat more technical) | Little & Rubin - Statistical Analysis with Missing Data | [Click](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119013563) |
+| Tutorials on dealing with missing data | Vink & Van Buuren | [Click](https://amices.org/) (see `Vignettes`). |
+
+# Visualizing the boys data
+
+In the remainder of this practical, we will ignore the missing data problems, and focus on visualizing (relations in) the data.
+
+__8. Visualize the relationship between `reg` (region) and `age` using a boxplot.__
+
+```{r, include = params$answers}
+boys_mis %>%
+  ggplot(aes(x = reg, y = age)) +
+  geom_boxplot(fill = "dark green") +
+  theme_minimal() +
+  labs(title = "Boxplot of age by region.")
+
+# Boys in the northerns region seem a little older
+# than the rest, boys with an NA on region seem to
+# be much younger than the rest, while there does 
+# not appear to be much of a difference in the 
+# remaining categories.
+```
+
+
+__9. Create a density plot of age, splitting the densities by `gen` using the `fill` aesthetic.__
+
+```{r}
+boys_mis %>%
+  ggplot(aes(x = age, fill = gen)) +
+  geom_density(alpha = 0.7) +
+  theme_minimal() +
+  scale_fill_brewer() +
+  labs(title = "Density of age by genital Tanner stage")
+
+# You'll see a clear relation between gen and age, 
+# which is not really surprising, because physical 
+# development is usually driven by aging.
+```
+
+
+
+
+
+
+
+
