@@ -26,6 +26,8 @@ Course team: <br>
 Study load: 7.5 ECTS <br>
 Assessment: Assignments and Exam  <br>
 
+This is a test
+
 ---
 
 All practicals and assignments should be hand in [through this repo](https://github.com/gerkovink/INFOMDA1-2021)
