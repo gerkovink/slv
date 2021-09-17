@@ -26,6 +26,8 @@ Course team: <br>
 Study load: 7.5 ECTS <br>
 Assessment: Assignments and Exam  <br>
 
+This is a test
+
 ---
 
 All practicals and assignments should be hand in [through this repo](https://github.com/gerkovink/INFOMDA1-2021)
@@ -286,3 +288,4 @@ The following links may be useful
 
 - [A Harvard Business Review article on communication through visuals](https://hbr.org/2016/06/visualizations-that-really-work). Good to also study some content that relate to the business-side of information exchange. 
 - [`ggplot`'s reference page](https://ggplot2.tidyverse.org)
+- [A simulation that demonstrates the (mis)use of confidence intervals](https://www.gerkovink.com/markup/Archive/2019/Wk4/Solution_to_Ex5.html)
