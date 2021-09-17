@@ -30,6 +30,7 @@ library(mice)
 library(DAAG)
 ```
 
+---
 
 # The `boys` data
 
@@ -56,7 +57,11 @@ Additionally, you saw that the data contains `r ncol(boys)` variables (`r colnam
 summary(boys)
 ```
 
+---
+
 Next to looking at the numbers, it is often insightful to visualize some of the univariate distributions of the data, for example `age` and `gen` (genital Tanner stage).
+
+---
 
 __1. Create a histogram of the variable `age` using the function `geom_histogram()`.__
 
@@ -71,6 +76,7 @@ boys %>%
 # also a substantial group of boys between the age
 # of 10 and 20 years.
 ```
+---
 
 __2. Create a bar chart of the variable `gen` using the function `geom_bar()`.__
 
@@ -82,6 +88,7 @@ boys %>%
   labs(title = "Distribution of genital Tanner stage")
 ```
 
+---
 
 # Assessing missing data
 
@@ -95,7 +102,11 @@ The `md.pattern` shows that there are 223 cases without any missing values, that
 
 Also, it becomes clear that the variables `gen` (genital Tanner stage), `phb` (pubic hair) and `tv` (testicular volume) have most missing values.
 
+---
+
 Now we now that there is a substantial amount of missing information in the `boys` data, we can more closely focus on the missing data patterns. A first step could be to test whether missingness in the variables `gen`, `phb` and `tv` depends on someones age.
+
+---
 
 __3. Create a missingness indicator for the variables `gen`, `phb` and `tv`.__
 
@@ -106,9 +117,12 @@ boys_mis <- boys %>%
          tv_mis  = is.na(tv))
 ```
 
+---
+
 __4. Assess whether missingness in the variables `gen`, `phb` and `tv` is related to someones age.__
 
 _Hint:_ Use the `group_by()` and `summarize()` functions from the `dplyr` library.
+
 
 
 ```{r, include = params$answers}
@@ -128,13 +142,17 @@ boys_mis %>%
 # actual value.
 ```
 
+---
+
 Although such differences can be useful, they rarely tell the complete story about the missingness. A useful strategy to assess missing data patterns is visualization, as graphs generally tell more than just plain numbers.
+
+---
 
 __5. Create a histogram for the variable `age`, faceted by whether or not someone has a missing value on `gen`.__
 
 _Hint:_ Use the function `facet_wrap` (see `help(facet_wrap)`) to create two separate histograms for both groups.
 
-```{r, include = params$answers}
+```{r, include = params$answers, message = FALSE}
 boys_mis %>%
   ggplot(aes(x = age)) +
   geom_histogram(fill = "dark green") + 
@@ -148,11 +166,15 @@ boys_mis %>%
 # are far more often between 0 and 5 years old.
 ```
 
+---
+
 Now we know somewhat more about the missingness problem in the `boys` dataset, we can continue visualizing other relationships in the data. The next step is to visualize the relationship between `age` and `bmi`.
+
+---
 
 __6. Create a scatterplot with `age` on the x-axis and `bmi` on the y-axis, using the function `geom_point()`.__
 
-```{r, include = params$answers}
+```{r, include = params$answers, message = FALSE}
 boys_mis %>%
   ggplot(aes(x = age, y = bmi)) +
   geom_point() +
@@ -163,7 +185,11 @@ boys_mis %>%
 # removed due to missingness in bmi.
 ```
 
+---
+
 Although we already know how missingness in the variable `gen` is related to `age`, we do not know whether `gen` is also related to `bmi`.
+
+---
 
 __7. Add a colour aesthetic to the previous plot using the missingness indicator of the variable `gen`.__
 
@@ -180,9 +206,11 @@ boys_mis %>%
 # much of a relation between missingness on gen and bmi
 ```
 
-So far, we have looked at whether the missingness in `gen` is related to someones age. We will now look a little further and assess the relationship between `gen` and `age`.
+---
 
 Usually, we would now handle the missingness problem accordingly. Yet, the scope of this course does not allow for a thorough module on dealing with missing data. If you are interested in this topic, or if you will need it during future (course)work, there are plenty of online resources. The short list of resources displayed below should get you going.
+
+---
 
 | Description| Author & Title | Link |
 |:-----------|:---------------|:-------|
@@ -190,13 +218,17 @@ Usually, we would now handle the missingness problem accordingly. Yet, the scope
 | Missing data theory (somewhat more technical) | Little & Rubin - Statistical Analysis with Missing Data | [Click](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119013563) |
 | Tutorials on dealing with missing data | Vink & Van Buuren | [Click](https://amices.org/) (see `Vignettes`). |
 
+---
+
 # Visualizing the boys data
 
 In the remainder of this practical, we will ignore the missing data problems, and focus on visualizing (relations in) the data.
 
+---
+
 __8. Visualize the relationship between `reg` (region) and `age` using a boxplot.__
 
-```{r, include = params$answers}
+```{r, include = params$answers, message = FALSE}
 boys_mis %>%
   ggplot(aes(x = reg, y = age)) +
   geom_boxplot(fill = "dark green") +
@@ -210,10 +242,11 @@ boys_mis %>%
 # remaining categories.
 ```
 
+---
 
 __9. Create a density plot of age, splitting the densities by `gen` using the `fill` aesthetic.__
 
-```{r}
+```{r, include = params$answers}
 boys_mis %>%
   ggplot(aes(x = age, fill = gen)) +
   geom_density(alpha = 0.7) +
@@ -226,10 +259,196 @@ boys_mis %>%
 # development is usually driven by aging.
 ```
 
+---
+
+__10. Create a diverging bar chart for `hgt` in the `boys` data set, that displays for every `age` year that year’s mean height in deviations from the overall average `hgt`.__
+
+*Hint:* You will have to create a categorical age variable for every year, and center the variable `hgt` such that it reflects that person's difference from the mean height in the entire data.
+
+```{r, include = params$answers}
+boys %>%
+  mutate(Age = cut(age, 0:22, labels = paste0(0:21, " years")),
+         Height = hgt - mean(hgt, na.rm = TRUE)) %>%
+  group_by(Age) %>%
+  summarize(Height = mean(Height, na.rm = TRUE)) %>%
+  mutate(color = ifelse(Height > 0, "Above average", "Below average")) %>%
+  ggplot(aes(x = Height, y = Age, fill = color)) +
+  geom_bar(stat = "identity") +
+  scale_fill_brewer(palette = "Set1") +
+  theme_minimal() +
+  theme(legend.title = element_blank())
+
+```
+
+```{r, include = params$answers}
+# We can clearly see that the average height in the 
+# group is reached just before age 7.
+```
+
+---
+
+# Regression visualization
+
+So far, we have predominantly focused our visualization on variables in the data. We can easily extend this to visualizing models that are constructed from the data. Similarly to looking at visualizations of variables, visualizations of models can help with the interpretability of the results, by making things obvious that would be obscure when looking at the raw numbers.
+
+---
+
+For this exercise, we are going to work with the elastic band data sets from the package `DAAG`, providing information on the stretch of a rubber band. For more information on the data, call `help(elastic1)` or `help(elastic2)`.
+
+---
+
+__11. Load the data `elastic1` and `elastic2` and bind the data frames together using the function `bind_rows()` and add a grouping variable indicating which data set a row stems from.__
+
+```{r, include = params$answers}
+elastic <- bind_rows("Elastic1" = elastic1,
+                     "Elastic2" = elastic2,
+                     .id = "Set")
+```
+
+---
+
+__12. Create a scatterplot mapping `stretch` on the x-axis and `distance` on the y-axis, and map the just created grouping variable as the color aesthetic.__
+
+```{r, include = params$answers}
+elastic %>%
+  ggplot(aes(x = stretch, y = distance, col = Set)) +
+  geom_point() +
+  scale_color_brewer(palette = "Set1") +
+  theme_minimal() +
+  labs(title = "Elastic bands data")
+```
+
+---
+
+__13. Recreate the previous plot, but now assess whether the results of the two data sets appear consistent by adding a linear regression line using `geom_smooth(type = "lm)`.__
+
+```{r, message = FALSE, include = params$answers}
+elastic %>%
+  ggplot(aes(x = stretch, y = distance, col = Set)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_color_brewer(palette = "Set1") +
+  theme_minimal() +
+  labs(title = "Elastic bands data")
+```
+
+```{r, include = params$answers}
+# The results seem very consistent: Data set elastic2 has 
+# more observations over a larger range, but both sets 
+# result in roughly the same regression line. Data set 
+# elastic1 seems to have an odd-one-out value.
+```
+
+---
+
+__14. For each of the data sets `elastic1` and `elastic2`, fit a regression model with `y = distance` on `x = stretch` using `lm(y ~ x, data)`.__
+
+```{r, include = params$answers}
+fit1 <- lm(distance ~ stretch, elastic1)
+fit2 <- lm(distance ~ stretch, elastic2)
+```
+
+---
+
+__15. For both of the previously created fitted models, determine the fitted values and the standard errors of the fitted values, and the proportion explained variance $R^2$.__
+
+*Hint:* Check out the `predict` function in `R` and notice the `se.fit` argument, as well as the `summary` function.
+
+```{r, include = params$answers}
+# Check fitted values
+
+fit1 %>% predict(se.fit = TRUE)
+fit2 %>% predict(se.fit = TRUE)
+
+# Note that fit1 (based on elastic1) has a larger
+# residual standard deviation (i.e., $residual.scale).
+
+# Check R2
+
+fit1 %>% summary()
+fit2 %>% summary()
+
+# Or directly
+fit1 %>% summary() %$% r.squared
+fit2 %>% summary() %$% r.squared
+
+# Note that the model based on elastic2 has smaller standard
+# errors and a much larger R2. This is due to the larger
+# range of values in elastic2 and the absence of an outlier.
+```
+
+---
+
+__16. Study the residual versus leverage plots for both models.__
+
+*Hint:* Use `plot(which = 5)` on the fitted objects.
+
+```{r, include = params$answers}
+fit1 %>% plot(which = 5)
+fit2 %>% plot(which = 5)
+
+# For elastic1, case 2 has the largest influence on
+# estimation. However, it is not the case with the 
+# largest residual:
+fit1$residuals
+# As we can see, case 7 has the largest residual.
+```
+
+---
+
+__17. Use the `elastic2` variable `stretch` to obtain predictions on the model fitted on `elastic1`.__
+
+```{r, include = params$answers}
+pred <- predict(fit1, newdata = elastic2)
+```
+
+---
+
+__18. Now make a scatterplot to investigate similarity between the predicted values and the observed values for `elastic2`.__
 
 
+```{r, message = FALSE, include = params$answers}
+pred_dat <- 
+  data.frame(distance = pred, 
+             stretch  = elastic2$stretch) %>%
+  bind_rows(Predicted = .,
+            Observed  = elastic2, 
+            .id = "Predicted")
+
+pred_dat %>%
+  ggplot(aes(stretch, distance, col = Predicted)) +
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  scale_color_brewer(palette = "Set1") +
+  theme_minimal() +
+  labs(title = "Predicted and observed distances")
+```
+
+```{r, include = params$answers}
+# The predicted values are very similar to the observed
+# values. However, they do not strictly follow the straight
+# line because there is some modeling error: we use elastic1's
+# model to predict elastic2's distance [error source 1] and
+# we compare those predictions to elastic2's observed distance
+# [error source 2]. However, if you consider the modeling,
+# these predictions are very accurate and have high
+# correlations with the observed values:
+
+cor(elastic2$distance, pred)
+
+```
 
 
+---
+
+# Hand-in
+
+When you have finished the practical, 
 
 
+- enclose all files of the project `02_Data_Visualization.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+
+- hand in the zip by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 4. That way we can iron out issues during the next Q&A in Week 3. 
+
+---
 
