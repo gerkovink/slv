@@ -246,3 +246,43 @@ The following links may be useful
 
 - [Gerko's quick `R` scripting course with video walkthroughs](https://www.gerkovink.com/prepR/)
 - [ISLR's web page](https://www.statlearning.com)
+
+
+# Week 2
+
+## Column 1
+
+### Lecture (Monday 9am - [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7))
+This week's slides:
+
+- [Lecture Slides](lectures/L2/Lecture_2.html)
+
+### Practical
+This week's practical is on data visualization. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
+
+- [Practical 2: Data visualization](practicals/02_Data_Visualization/02_Data_Visualization.html)
+- [Practical 2: Data visualization with code solutions](practicals/02_Data_Visualization/02_Data_Visualisation_answers.html)
+- [SLV_practical2 - or create your own project](practicals/02_Data_Visualization/SLV_practical2.zip)
+
+Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
+
+### Must watch
+The following lecture by [Dewey Dunnington](https://fishandwhistle.net) is quite informative. Also for those that already (think they) know the `ggplot2` package. 
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nqI5CmdUYRQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+## Column 2
+
+### Required reading
+
+Study the following materials
+
+- [R4DS Chapters 2 and 3](https://r4ds.had.co.nz)
+
+### Useful links
+The following links may be useful
+
+- [A Harvard Business Review article on communication through visuals](https://hbr.org/2016/06/visualizations-that-really-work). Good to also study some content that relate to the business-side of information exchange. 
+- [`ggplot`'s reference page](https://ggplot2.tidyverse.org)
