@@ -1,8 +1,8 @@
 ---
 title: "Exploratory Data Analysis"
 params:
-  answers: true # uncomment if answers are to be included
-  # answers: false
+  # answers: true # uncomment if answers are to be included
+  answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -14,10 +14,10 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
+    # pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
 ---
 
-# Introduction 
+# Introduction
 
 In this practical, we will build upon the topics of the last two weeks, and deepen your understanding of various data wrangling and visualization techniques, using the `tidyverse` functionalities. Additionally, we briefly introduce the concept of missing data and how to visualize relations between the data and missingness.
 
@@ -34,9 +34,9 @@ library(DAAG)
 
 # The `boys` data
 
-Today, we will work with the `boys` data from the `R` package `mice`, containing information from a sample of `r nrow(boys)`. Information about this data can be obtained by running the code `?mice::boys`.
+Today, we will work with the `boys` data from the `R` package `mice`, containing information from a sample of `r nrow(boys)` boys. Information about this data can be obtained by running the code `?mice::boys`.
 
-When working with a new data set, it is always a good idea to get a grasp of the structure of the data.
+When working with a new data set, it is always a good idea to familiarize yourself with the structure of the data.
 
 ```{r}
 head(boys)
@@ -98,7 +98,7 @@ Now we know that there is a substantial amount of missing data, it is time to as
 md.pattern(boys)
 ```
 
-The `md.pattern` shows that there are 223 cases without any missing values, that `r nrow(boys) - 223` observations <ins>with</ins> at least one value missing, and that there are 1622 missing values in total in the data, such that `r round(sum(is.na(boys)) / prod(dim(boys)) * 100)`% of the data is missing.
+The `md.pattern` shows that there are 223 cases without any missing values, `r nrow(boys) - 223` observations <ins>with</ins> at least one value missing, and that there are 1622 missing values in total in the data, such that `r round(sum(is.na(boys)) / prod(dim(boys)) * 100)`% of the data is missing.
 
 Also, it becomes clear that the variables `gen` (genital Tanner stage), `phb` (pubic hair) and `tv` (testicular volume) have most missing values.
 
@@ -139,12 +139,12 @@ boys_mis %>%
   summarize(age = mean(age))
 # And we see that those with a missing value on the variables
 # of interest have a substantial lower age than those with an
-# actual value.
+# observed value.
 ```
 
 ---
 
-Although such differences can be useful, they rarely tell the complete story about the missingness. A useful strategy to assess missing data patterns is visualization, as graphs generally tell more than just plain numbers.
+Although such differences can be useful, they rarely tell the complete story about the missingness. A useful strategy to assess missing data patterns is visualization, as figures generally tell more than just plain numbers.
 
 ---
 
@@ -208,7 +208,7 @@ boys_mis %>%
 
 ---
 
-Usually, we would now handle the missingness problem accordingly. Yet, the scope of this course does not allow for a thorough module on dealing with missing data. If you are interested in this topic, or if you will need it during future (course)work, there are plenty of online resources. The short list of resources displayed below should get you going.
+Usually, we would, at this point, handle the missingness problem accordingly. Yet, the scope of this course does not allow for a thorough module on dealing with missing data. If you are interested in this topic, or if you will need it during future (course)work, there are plenty of online resources. The short list of resources displayed below should get you going.
 
 ---
 
@@ -278,9 +278,6 @@ boys %>%
   theme_minimal() +
   theme(legend.title = element_blank())
 
-```
-
-```{r, include = params$answers}
 # We can clearly see that the average height in the 
 # group is reached just before age 7.
 ```
@@ -289,7 +286,7 @@ boys %>%
 
 # Regression visualization
 
-So far, we have predominantly focused our visualization on variables in the data. We can easily extend this to visualizing models that are constructed from the data. Similarly to looking at visualizations of variables, visualizations of models can help with the interpretability of the results, by making things obvious that would be obscure when looking at the raw numbers.
+So far, we have predominantly focused our visualization on variables in the data. We can easily extend this to visualizing models that are constructed from the data. Similarly to looking at visualizations of variables, visualizations of models can help interpreting the results and the fit of the model, by making things obvious that would be obscure when looking at the raw numbers.
 
 ---
 
@@ -297,7 +294,7 @@ For this exercise, we are going to work with the elastic band data sets from the
 
 ---
 
-__11. Load the data `elastic1` and `elastic2` and bind the data frames together using the function `bind_rows()` and add a grouping variable indicating which data set a row stems from.__
+__11. Load the data `elastic1` and `elastic2` and bind the data frames together using the function `bind_rows()` and add a grouping variable indicating whether an observation comes from `elastic1` or from `elastic2`.__
 
 ```{r, include = params$answers}
 elastic <- bind_rows("Elastic1" = elastic1,
@@ -307,7 +304,7 @@ elastic <- bind_rows("Elastic1" = elastic1,
 
 ---
 
-__12. Create a scatterplot mapping `stretch` on the x-axis and `distance` on the y-axis, and map the just created grouping variable as the color aesthetic.__
+__12. Create a scatterplot mapping `stretch` on the x-axis and `distance` on the y-axis, and map the just created group indicator as the color aesthetic.__
 
 ```{r, include = params$answers}
 elastic %>%
@@ -320,7 +317,9 @@ elastic %>%
 
 ---
 
-__13. Recreate the previous plot, but now assess whether the results of the two data sets appear consistent by adding a linear regression line using `geom_smooth(type = "lm)`.__
+__13. Recreate the previous plot, but now assess whether the results of the two data sets appear consistent by adding a linear regression line.__
+
+*Hint:* Use the function `geom_smooth()`.
 
 ```{r, message = FALSE, include = params$answers}
 elastic %>%
@@ -330,9 +329,8 @@ elastic %>%
   scale_color_brewer(palette = "Set1") +
   theme_minimal() +
   labs(title = "Elastic bands data")
-```
 
-```{r, include = params$answers}
+
 # The results seem very consistent: Data set elastic2 has 
 # more observations over a larger range, but both sets 
 # result in roughly the same regression line. Data set 
