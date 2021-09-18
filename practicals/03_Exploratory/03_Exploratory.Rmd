@@ -1,8 +1,8 @@
 ---
 title: "Exploratory Data Analysis"
 params:
-  # answers: true # uncomment if answers are to be included
-  answers: false
+  answers: true # uncomment if answers are to be included
+  # answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -14,14 +14,14 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    # pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
+    pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
 ---
 
 # Introduction
 
 In this practical, we will build upon the topics of the last two weeks, and deepen your understanding of various data wrangling and visualization techniques, using the `tidyverse` functionalities. Additionally, we briefly introduce the concept of missing data and how to visualize relations between the data and missingness.
 
-Don’t forget to open the project file `03_Exploratory.Rproj` and to create your `.Rmd` or `.R` file to work in.
+Don’t forget to open a project file called `03_Exploratory.Rproj` and to create your `.Rmd` or `.R` file to work in.
 
 ```{r load_packages, message = FALSE}
 library(tidyverse)
