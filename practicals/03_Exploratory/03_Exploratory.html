@@ -332,7 +332,7 @@ div.tocify {
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p>In this practical, we will build upon the topics of the last two weeks, and deepen your understanding of various data wrangling and visualization techniques, using the <code>tidyverse</code> functionalities. Additionally, we briefly introduce the concept of missing data and how to visualize relations between the data and missingness.</p>
-<p>Don’t forget to open the project file <code>03_Exploratory.Rproj</code> and to create your <code>.Rmd</code> or <code>.R</code> file to work in.</p>
+<p>Don’t forget to open a project file called <code>03_Exploratory.Rproj</code> and to create your <code>.Rmd</code> or <code>.R</code> file to work in.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mice)</span>
@@ -341,8 +341,8 @@ div.tocify {
 </div>
 <div id="the-boys-data" class="section level1">
 <h1>The <code>boys</code> data</h1>
-<p>Today, we will work with the <code>boys</code> data from the <code>R</code> package <code>mice</code>, containing information from a sample of 748. Information about this data can be obtained by running the code <code>?mice::boys</code>.</p>
-<p>When working with a new data set, it is always a good idea to get a grasp of the structure of the data.</p>
+<p>Today, we will work with the <code>boys</code> data from the <code>R</code> package <code>mice</code>, containing information from a sample of 748 boys. Information about this data can be obtained by running the code <code>?mice::boys</code>.</p>
+<p>When working with a new data set, it is always a good idea to familiarize yourself with the structure of the data.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(boys)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -405,7 +405,7 @@ div.tocify {
 ## 1     1   1   0   0   0  0   0   0   0    7
 ## 3     1   0   1   1   1  1   0   0   0    4
 ##       0   3   4  20  21 46 503 503 522 1622</code></pre>
-<p>The <code>md.pattern</code> shows that there are 223 cases without any missing values, that 525 observations <ins>with</ins> at least one value missing, and that there are 1622 missing values in total in the data, such that 24% of the data is missing.</p>
+<p>The <code>md.pattern</code> shows that there are 223 cases without any missing values, 525 observations <ins>with</ins> at least one value missing, and that there are 1622 missing values in total in the data, such that 24% of the data is missing.</p>
 <p>Also, it becomes clear that the variables <code>gen</code> (genital Tanner stage), <code>phb</code> (pubic hair) and <code>tv</code> (testicular volume) have most missing values.</p>
 <hr />
 <p>Now we now that there is a substantial amount of missing information in the <code>boys</code> data, we can more closely focus on the missing data patterns. A first step could be to test whether missingness in the variables <code>gen</code>, <code>phb</code> and <code>tv</code> depends on someones age.</p>
@@ -415,7 +415,7 @@ div.tocify {
 <p><strong>4. Assess whether missingness in the variables <code>gen</code>, <code>phb</code> and <code>tv</code> is related to someones age.</strong></p>
 <p><em>Hint:</em> Use the <code>group_by()</code> and <code>summarize()</code> functions from the <code>dplyr</code> library.</p>
 <hr />
-<p>Although such differences can be useful, they rarely tell the complete story about the missingness. A useful strategy to assess missing data patterns is visualization, as graphs generally tell more than just plain numbers.</p>
+<p>Although such differences can be useful, they rarely tell the complete story about the missingness. A useful strategy to assess missing data patterns is visualization, as figures generally tell more than just plain numbers.</p>
 <hr />
 <p><strong>5. Create a histogram for the variable <code>age</code>, faceted by whether or not someone has a missing value on <code>gen</code>.</strong></p>
 <p><em>Hint:</em> Use the function <code>facet_wrap</code> (see <code>help(facet_wrap)</code>) to create two separate histograms for both groups.</p>
@@ -428,7 +428,7 @@ div.tocify {
 <hr />
 <p><strong>7. Add a colour aesthetic to the previous plot using the missingness indicator of the variable <code>gen</code>.</strong></p>
 <hr />
-<p>Usually, we would now handle the missingness problem accordingly. Yet, the scope of this course does not allow for a thorough module on dealing with missing data. If you are interested in this topic, or if you will need it during future (course)work, there are plenty of online resources. The short list of resources displayed below should get you going.</p>
+<p>Usually, we would, at this point, handle the missingness problem accordingly. Yet, the scope of this course does not allow for a thorough module on dealing with missing data. If you are interested in this topic, or if you will need it during future (course)work, there are plenty of online resources. The short list of resources displayed below should get you going.</p>
 <hr />
 <table style="width:100%;">
 <colgroup>
@@ -477,15 +477,16 @@ div.tocify {
 </div>
 <div id="regression-visualization" class="section level1">
 <h1>Regression visualization</h1>
-<p>So far, we have predominantly focused our visualization on variables in the data. We can easily extend this to visualizing models that are constructed from the data. Similarly to looking at visualizations of variables, visualizations of models can help with the interpretability of the results, by making things obvious that would be obscure when looking at the raw numbers.</p>
+<p>So far, we have predominantly focused our visualization on variables in the data. We can easily extend this to visualizing models that are constructed from the data. Similarly to looking at visualizations of variables, visualizations of models can help interpreting the results and the fit of the model, by making things obvious that would be obscure when looking at the raw numbers.</p>
 <hr />
 <p>For this exercise, we are going to work with the elastic band data sets from the package <code>DAAG</code>, providing information on the stretch of a rubber band. For more information on the data, call <code>help(elastic1)</code> or <code>help(elastic2)</code>.</p>
 <hr />
-<p><strong>11. Load the data <code>elastic1</code> and <code>elastic2</code> and bind the data frames together using the function <code>bind_rows()</code> and add a grouping variable indicating which data set a row stems from.</strong></p>
+<p><strong>11. Load the data <code>elastic1</code> and <code>elastic2</code> and bind the data frames together using the function <code>bind_rows()</code> and add a grouping variable indicating whether an observation comes from <code>elastic1</code> or from <code>elastic2</code>.</strong></p>
 <hr />
-<p><strong>12. Create a scatterplot mapping <code>stretch</code> on the x-axis and <code>distance</code> on the y-axis, and map the just created grouping variable as the color aesthetic.</strong></p>
+<p><strong>12. Create a scatterplot mapping <code>stretch</code> on the x-axis and <code>distance</code> on the y-axis, and map the just created group indicator as the color aesthetic.</strong></p>
 <hr />
-<p><strong>13. Recreate the previous plot, but now assess whether the results of the two data sets appear consistent by adding a linear regression line using <code>geom_smooth(type = &quot;lm)</code>.</strong></p>
+<p><strong>13. Recreate the previous plot, but now assess whether the results of the two data sets appear consistent by adding a linear regression line.</strong></p>
+<p><em>Hint:</em> Use the function <code>geom_smooth()</code>.</p>
 <hr />
 <p><strong>14. For each of the data sets <code>elastic1</code> and <code>elastic2</code>, fit a regression model with <code>y = distance</code> on <code>x = stretch</code> using <code>lm(y ~ x, data)</code>.</strong></p>
 <hr />
