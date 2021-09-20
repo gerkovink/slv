@@ -199,6 +199,15 @@ If all fails and you have insufficient rights to your machine, the following web
 
 Naturally, you will need internet access for these services to be accessed. 
 
+# Assignments
+
+## Column 1
+
+### Assignment 1
+
+You can [find assignment 1 here](assignments/assignment1_eda.html)
+
+Due date is Oct 4 @ 23.59pm.
 
 # Week 1
 
