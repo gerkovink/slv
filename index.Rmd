@@ -56,7 +56,7 @@ All practicals and assignments should be hand in [through this repo](https://git
 
 ## Column 1
 
-### Fundamental Techniques in Data Science with `R` 
+### Statistical Learning and Visualization
 In nine weeks we will dive into statistical learning and visualization in R. We will focus on supervised learning techniques and data wrangling in the context of data analysis and inference, as well as the connection to research philosophy. During every lecture we will treat a different theoretical aspect. Following each lecture there will be a computer lab exercise that connects the statistical theory to practice, as well as a Q&A meeting (Wednesdays @ 11am - online) wherein you can pose any and all questions that remain unanswered about the course materials, theory, practice and your practical assignments. 
 
 ### Assignment and Grading
@@ -321,13 +321,6 @@ This week's practical is on exploratory data analysis. Code solutions are also g
 
 Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
 
-### Must watch
-The following lecture by [Edward Tufte](https://www.edwardtufte.com/tufte/) is quite nice. 
-
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rHUDJ8RyseQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
-
 ## Column 2
 
 ### Required reading
@@ -342,3 +335,10 @@ The following links may be useful
 
 - [A wonderful post about misusing the y-axis](https://www.thisismetis.com/blog/misleading-graphs-manipulating-the-y-axis). 
 - [`ggplot`'s reference page](https://ggplot2.tidyverse.org)
+
+### Must watch
+The following lecture by [Edward Tufte](https://www.edwardtufte.com/tufte/) is quite nice. 
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rHUDJ8RyseQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
