@@ -301,6 +301,9 @@ This week's slides:
 - [Lecture Slides part 2](lectures/L3/Example_titanic.html)
 - [The titanic set from part 2](lectures/L3/titanic.csv). I don't remember where I got it from, originally. There is also a copy of the `titanic` data in `R`, but I found this data set and its labeling to be more informative.
 
+### Q&A
+During the Q&A session on Wednesday, we will devote some time to missing data analysis
+
 ### Practical
 This week's practical is on exploratory data analysis. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
 
@@ -323,6 +326,7 @@ The following lecture by [Edward Tufte](https://www.edwardtufte.com/tufte/) is q
 Study the following materials
 
 - [R4DS Section on Explore (Chapters 2-8)](https://r4ds.had.co.nz)
+- [FIMD Chapter 1 and Chapter 2.2, 2.3 and 2.6](https://stefvanbuuren.name/fimd/)
 
 ### Useful links
 The following links may be useful
