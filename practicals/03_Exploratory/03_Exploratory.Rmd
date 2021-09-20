@@ -1,8 +1,8 @@
 ---
 title: "Exploratory Data Analysis"
 params:
-  answers: true # uncomment if answers are to be included
-  # answers: false
+  # answers: true # uncomment if answers are to be included
+  answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -14,7 +14,7 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
+    # pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
 ---
 
 # Introduction
@@ -444,9 +444,9 @@ cor(elastic2$distance, pred)
 When you have finished the practical, 
 
 
-- enclose all files of the project `02_Data_Visualization.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+- enclose all files of the project (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file or folder, and 
 
-- hand in the zip by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 4. That way we can iron out issues during the next Q&A in Week 3. 
+- hand in that zip or folder by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 4. 
 
 ---
 
