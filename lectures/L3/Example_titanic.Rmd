@@ -1,0 +1,216 @@
+---
+title: "Example on the titanic data set"
+author: "Gerko Vink"
+date: "Fundamental Techniques in Data Science with R"
+output:
+  ioslides_presentation:
+    smaller: yes
+    widescreen: no
+    logo: logo.png
+---
+
+## Packages and functions used
+```{r message=FALSE}
+library(magrittr) # pipes
+library(dplyr)    # data manipulation
+library(lattice)  # plotting - used for conditional plotting
+library(ggplot2)  # plotting
+library(ggthemes) # plotting themes
+```
+
+# Titanic data
+
+## Example: titanic data
+We start this lecture with a data set that logs the survival of passengers on board of the disastrous maiden voyage of the ocean liner Titanic
+```{r}
+titanic <- read.csv(file = "titanic.csv", header = TRUE, stringsAsFactors = TRUE)
+titanic %>% head
+```
+
+## Inspect the data set
+```{r}
+str(titanic)
+```
+
+## What sources of information
+We have information on the following features.
+
+Our outcome/dependent variable:
+
+- Survived: yes or no
+
+Some potential predictors:
+
+- Sex: the passenger's gender coded as `c(male, female)`
+- Pclass: the class the passenger traveled in
+- Age: the passenger's age in years
+- Siblings.Spouses.Aboard: if siblings or spouses were also aboard
+- Parents.Children.Aboard: if the passenger's parents or children were aboard
+
+and more. 
+
+## Hypothetically
+
+We can start investigating if there are patterns in this data that are related to the survival probability. 
+
+For example, we could hypothesize based on the crede "women and children first" that 
+
+- `Age` relates to the probability of survival in that younger passengers have a higher probability of survival
+- `Sex` relates to survival in that females have a higher probability of survival
+
+Based on socio-economic status, we could hypothesize that 
+
+- `Pclass` relates to the probability of survival in that higher travel class leads to a higher probability of survival
+
+And so on. 
+
+# A quick investigation
+
+## Is `Age` related?
+```{r fig.height = 3, warning=FALSE, message=FALSE, dev.args = list(bg = 'transparent'), fig.align='center'}
+titanic %>% ggplot(aes(x = Age, y = Survived)) + geom_point() +
+  geom_smooth(method = "glm", 
+    method.args = list(family = "binomial"), 
+    se = FALSE) + xlim(-1, 100) + theme_minimal()
+```
+
+## Inspecting the data
+```{r}
+titanic %$% table(Pclass, Survived)
+```
+
+It seems that the higher the class (i.e. `1 > 2 > 3`), the higher the probability of survival.
+
+We can verify this
+```{r}
+titanic %$% table(Pclass, Survived) %>% prop.table(margin = 1) %>% round(digits = 2)
+```
+
+# A more thorough inspection
+
+## `Survived ~ Age`
+```{r fig.height=2.3, dev.args = list(bg = 'transparent'), fig.align='center'}
+titanic %>% 
+  ggplot(aes(x = Age)) + 
+  geom_histogram(bins = 30) + 
+  facet_wrap(~Survived) + theme_clean()
+```
+
+The distribution of `Age` for the survivors (`TRUE`) is different from the distribution of `Age` for the non-survivors (`FALSE`). Especially at the younger end there is a point mass for the survivors, which indicates that children have a higher probability of survival. However, it is not dramatically different. 
+
+## `Survived ~ Sex`
+```{r fig.height=2.3, dev.args = list(bg = 'transparent'), fig.align='center'}
+titanic %>% 
+  ggplot(aes(x = Sex)) + 
+  geom_bar(aes(fill = Sex)) + 
+  facet_wrap(~Survived) + theme_clean()
+```
+
+Wow! These distributions are very different! Females seem to have a much higher probability of survival. 
+
+## `Survived ~ Pclass`
+```{r fig.height=2.3, dev.args = list(bg = 'transparent'), fig.align='center'}
+titanic %>%
+  ggplot(aes(x = Pclass)) + 
+  geom_bar(aes(fill = Pclass)) + 
+  facet_wrap(~Survived) + theme_clean()
+```
+
+There is a very apparent difference between the distributions of the survivors and non-survivors over the classes. For example, we see that in 1st and 2nd class there are more survivors than non-survivors, while in the third class this relation is opposite. 
+
+## Edit the data
+```{r}
+titanic %<>% 
+  mutate(Pclass = factor(Pclass, levels = c(3, 2, 1), ordered = FALSE))
+```
+
+The `Pclass` column is now correctly coded as a factor. We ignore the ordering for now
+
+```{r fig.height=2, dev.args = list(bg = 'transparent'), fig.align='center'}
+titanic %>%
+  ggplot(aes(x = Pclass)) + 
+  geom_bar(aes(fill = Pclass)) + 
+  facet_wrap(~Survived) + theme_clean()
+```
+
+## Titanic with interactions
+```{r}
+fit.interaction <- titanic %$% glm(Survived ~ Age * Sex * Pclass, 
+                                   family = binomial(link = "logit"))
+fit.interaction %>% summary %>% .$coefficients
+```
+
+## Interactions
+An interaction occurs when the (causal) effect of one predictor on the outcome depends on the level of the (causal) effect of another predictor.
+
+![](interaction.png)
+
+[Image Source](https://en.wikipedia.org/wiki/File:Interaction_plot_body_temp.svg)
+
+E.g. the relation between body temperature and air temperature depends on the species. 
+
+## Visualizing the effects
+To illustrate, I will limit this investigation to `Age` and `Pclass` for males only.
+
+- We can use the `predict` function to illustrate the conditional probabilities within each class
+
+To do so, we need to create a `new` data frame that has all the combinations of predictors we need. 
+```{r}
+male <- data.frame(Pclass = factor(rep(c(1, 2, 3), c(80, 80, 80))), 
+                  Age = rep(1:80, times = 3),
+                  Sex = rep("male", times = 240))
+female <- data.frame(Pclass = factor(rep(c(1, 2, 3), c(80, 80, 80))), 
+                  Age = rep(1:80, times = 3),
+                  Sex = rep("female", times = 240))
+new <- rbind(female, male)
+new <- cbind(new, 
+             predict(fit.interaction, newdata = new, 
+                     type = "link", se = TRUE))
+```
+
+## Our `new` data set
+```{r}
+head(new)
+```
+
+## Adding the predicted probabilities
+There are two simple approaches to obtain the predicted probabilities. First, we could simply ask for the predicted response:
+```{r}
+new$prob <- plogis(new$fit)
+head(new)
+```
+
+## Adding confidence intervals
+```{r}
+new %<>% 
+  mutate(lower = plogis(fit - 1.96 * se.fit),
+         upper = plogis(fit + 1.96 * se.fit))
+
+head(new)
+```
+
+## What do we have?
+A data frame with simulated `Pclass` and `Age` for males.
+
+```{r}
+new %>% summary()
+```
+
+## Visualizing the effects: link
+```{r fig.height=3.5, dev.args = list(bg = 'transparent'), fig.align='center'}
+new %>%
+  ggplot(aes(x = Age, y = fit)) + 
+  geom_line(aes(colour = Pclass), lwd = 1) + 
+  facet_wrap(~ Sex)
+```
+
+## Visualizing the effects: probabilities
+```{r fig.height=3.5, dev.args = list(bg = 'transparent'), fig.align='center'}
+new %>%
+  ggplot(aes(x = Age, y = prob)) + 
+  geom_ribbon(aes(ymin = lower, ymax = upper, fill = Pclass), alpha = .2) +
+  geom_line(aes(colour = Pclass), lwd = 1) + ylab("Probability of Survival") +
+  facet_wrap(~ Sex)
+```
+
+
