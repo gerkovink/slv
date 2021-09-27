@@ -1,7 +1,7 @@
 ---
 title: "Supervised learning: Regression 1"
 params:
-  answers: true
+  answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,7 +13,7 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    pandoc_args: --output=01_Regression_answers.html
+    # pandoc_args: --output=04_Regression_answers.html
 ---
 
 ```{r global_options, include=FALSE}
@@ -577,3 +577,16 @@ cv_lm <- function(formula, dataset, k) {
 cv_lm(formula = medv ~ lstat + age + tax, dataset = Boston, k = 9)
 cv_lm(formula = medv ~ lstat + I(lstat^2) + age + tax, dataset = Boston, k = 9)
 ```
+
+---
+
+# Hand-in
+
+When you have finished the practical, 
+
+
+- enclose all files of the project `04_Regression.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+
+- hand in the zip by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 6. That way we can iron out issues during the next Q&A in Week 5. 
+
+---

@@ -444,9 +444,9 @@ cor(elastic2$distance, pred)
 When you have finished the practical, 
 
 
-- enclose all files of the project `02_Data_Visualization.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+- enclose all files of the project `03_Data_Visualization.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
 
-- hand in the zip by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 4. That way we can iron out issues during the next Q&A in Week 3. 
+- hand in the zip by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 5. That way we can iron out issues during the next Q&A in Week 4. 
 
 ---
 
