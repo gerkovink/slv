@@ -56,7 +56,7 @@ All practicals and assignments should be hand in [through this repo](https://git
 
 ## Column 1
 
-### Fundamental Techniques in Data Science with `R` 
+### Statistical Learning and Visualization
 In nine weeks we will dive into statistical learning and visualization in R. We will focus on supervised learning techniques and data wrangling in the context of data analysis and inference, as well as the connection to research philosophy. During every lecture we will treat a different theoretical aspect. Following each lecture there will be a computer lab exercise that connects the statistical theory to practice, as well as a Q&A meeting (Wednesdays @ 11am - online) wherein you can pose any and all questions that remain unanswered about the course materials, theory, practice and your practical assignments. 
 
 ### Assignment and Grading
@@ -199,6 +199,15 @@ If all fails and you have insufficient rights to your machine, the following web
 
 Naturally, you will need internet access for these services to be accessed. 
 
+# Assignments
+
+## Column 1
+
+### Assignment 1
+
+You can [find assignment 1 here](assignments/assignment1_eda.html)
+
+Due date is Oct 4 @ 23.59pm.
 
 # Week 1
 
@@ -289,3 +298,47 @@ The following links may be useful
 - [A Harvard Business Review article on communication through visuals](https://hbr.org/2016/06/visualizations-that-really-work). Good to also study some content that relate to the business-side of information exchange. 
 - [`ggplot`'s reference page](https://ggplot2.tidyverse.org)
 - [A simulation that demonstrates the (mis)use of confidence intervals](https://www.gerkovink.com/markup/Archive/2019/Wk4/Solution_to_Ex5.html)
+
+# Week 3
+
+## Column 1
+
+### Lecture (Monday 9am - [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7))
+This week's slides:
+
+- [Lecture Slides part 1](lectures/L3/week-2.pdf)
+- [Lecture Slides part 2](lectures/L3/Example_titanic.html)
+- [The titanic set from part 2](lectures/L3/titanic.csv). I don't remember where I got it from, originally. There is also a copy of the `titanic` data in `R`, but I found this data set and its labeling to be more informative.
+
+### Q&A
+During the Q&A session on Wednesday, we will devote some time to missing data analysis
+
+### Practical
+This week's practical is on exploratory data analysis. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
+
+- [Practical 3: EDA](practicals/03_Exploratory/03_Exploratory.html)
+- [Practical 3: EDA with code solutions](practicals/03_Exploratory/03_Exploratory_Answers.html)
+
+Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
+
+## Column 2
+
+### Required reading
+
+Study the following materials
+
+- [R4DS Section on Explore (Chapters 2-8)](https://r4ds.had.co.nz)
+- [FIMD Chapter 1 and Chapter 2.2, 2.3 and 2.6](https://stefvanbuuren.name/fimd/)
+
+### Useful links
+The following links may be useful
+
+- [A wonderful post about misusing the y-axis](https://www.thisismetis.com/blog/misleading-graphs-manipulating-the-y-axis). 
+- [`ggplot`'s reference page](https://ggplot2.tidyverse.org)
+
+### Must watch
+The following lecture by [Edward Tufte](https://www.edwardtufte.com/tufte/) is quite nice. 
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rHUDJ8RyseQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>

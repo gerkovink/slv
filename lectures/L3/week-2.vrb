@@ -1,0 +1,9 @@
+\begin{footnotesize}
+\begin{verbatim}
+ggplot(quakes, aes(factor(mag),stations)) +
+   theme_tufte() +
+   geom_tufteboxplot(outlier.colour="transparent") +
+   theme(axis.title=element_blank())
+\end{verbatim}
+  \end{footnotesize}
+  \includegraphics[width=0.68\textwidth]{pics/tufte-box.png}
