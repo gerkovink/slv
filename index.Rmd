@@ -383,6 +383,7 @@ This week's practical is on regression. Code solutions are also given to you. Us
 
 - [Practical 5: Model comparison](practicals/05_Regression_Evaluation/05_Regression_Evaluation.html)
 - [Practical 5: Model comparison with code solutions](practicals/05_Regression_Evaluation/05_Regression_Evaluation_answers.html)
+- [generate_formulas.R](practicals/05_Regression_Evaluation/generate_formulas.R)
 
 Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
 
