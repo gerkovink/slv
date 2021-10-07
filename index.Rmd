@@ -26,8 +26,6 @@ Course team: <br>
 Study load: 7.5 ECTS <br>
 Assessment: Assignments and Exam  <br>
 
-This is a test
-
 ---
 
 All practicals and assignments should be hand in [through this repo](https://github.com/gerkovink/INFOMDA1-2021)
@@ -342,3 +340,60 @@ The following lecture by [Edward Tufte](https://www.edwardtufte.com/tufte/) is q
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rHUDJ8RyseQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
+
+# Week 4
+
+## Column 1
+
+### Lecture (Monday 9am - [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7))
+This week's slides:
+
+- [Lecture 4](lectures/L4/week-4.pdf)
+
+
+### Practical
+This week's practical is on regression. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
+
+- [Practical 4: Regression](practicals/04_Regression/04_Regression.html)
+- [Practical 4: Regression with code solutions](practicals/04_Regression/01_Regression_answers.html)
+
+Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
+
+## Column 2
+
+### Required reading
+
+Study the following materials
+
+-[ISLR V2 Chapter 1, 2 and 3](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
+
+
+# Week 5
+
+## Column 1
+
+### Lecture (Monday 9am - [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7))
+This week's slides:
+
+- [Lecture 5](lectures/L5/week-5.pdf)
+
+
+### Practical
+This week's practical is on regression. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
+
+- [Practical 5: Model comparison](practicals/05_Regression_Evaluation/05_Regression_Evaluation.html)
+- [Practical 5: Model comparison with code solutions](practicals/05_Regression_Evaluation/05_Regression_Evaluation_answers.html)
+- [generate_formulas.R](practicals/05_Regression_Evaluation/generate_formulas.R)
+
+Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
+
+## Column 2
+
+### Required reading
+
+Study the following materials
+
+-[ISLR V2 Chapter 5 and 6.1 and 6.2](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
+
+
+
