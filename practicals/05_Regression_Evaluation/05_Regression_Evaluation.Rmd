@@ -460,3 +460,17 @@ tibble(Method = as_factor(c("lm", "subset", "lasso", "cv_las")), MSE = mses) %>%
   scale_fill_viridis_d() # different colour scale
 
 ```
+
+
+---
+
+# Hand-in
+
+When you have finished the practical, 
+
+
+- enclose all files of the project `05_Regression_Evaluation.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+
+- hand in the zip by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 7. That way we can iron out issues during the next Q&A in Week 6. 
+
+---

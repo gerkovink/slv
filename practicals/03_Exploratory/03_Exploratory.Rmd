@@ -1,8 +1,8 @@
 ---
 title: "Exploratory Data Analysis"
 params:
-  # answers: true # uncomment if answers are to be included
-  answers: false
+  answers: true # uncomment if answers are to be included
+  # answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -14,7 +14,7 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    # pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
+    pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
 ---
 
 # Introduction
@@ -442,7 +442,6 @@ cor(elastic2$distance, pred)
 # Hand-in
 
 When you have finished the practical, 
-
 
 - enclose all files of the project (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file or folder, and 
 
