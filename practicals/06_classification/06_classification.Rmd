@@ -1,8 +1,8 @@
 ---
 title: "Supervised learning: Classification 1"
 params:
-  # answers: true
-  answers: false
+  answers: true
+  # answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,11 +13,7 @@ output:
     toc_float: true
     df_print: paged
     theme: paper
-    # pandoc_args: --output=06_classification_answers.html
-  pdf_document:
-    toc: true
-    toc_depth: 1
-    latex_engine: xelatex
+    pandoc_args: --output=06_classification_answers.htm
 ---
 
 # Introduction
@@ -434,3 +430,14 @@ predict(lr_mod_titanic,
 # access to the lifeboats. Also 3rd class was way below deck.
 
 ```
+
+# Hand-in
+
+When you have finished the practical, 
+
+
+- enclose all files of the project `06_classification.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+
+- hand in the zip by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 8. That way we can iron out issues during the next Q&A in Week 7.
+
+---
