@@ -421,35 +421,35 @@ Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021).
 
 Study the following materials
 
-- [ISLR V2 Chapter 4](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
+- [ISLR V2 Sections 4.1, 4.2, 4.3, 4.4.1, 4.4.2 and 8.1 ](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
 
 
-# Week 7
+<!-- # Week 7 -->
 
-## Column 1
+<!-- ## Column 1 -->
 
-### Lecture (Monday 9am - [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7))
-This week's slides:
+<!-- ### Lecture (Monday 9am - [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7)) -->
+<!-- This week's slides: -->
 
-- [Lecture 7](lectures/L7/week-7.pdf)
+<!-- - [Lecture 7](lectures/L7/week-7.pdf) -->
 
 
-### Practical
-This week's practical is on classification. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
+<!-- ### Practical -->
+<!-- This week's practical is on classification. Code solutions are also given to you. Use these answers to help yourself when you're stuck.  -->
 
-- [Practical 7: Classification evaluation Evaluation](practicals/07_classification_evaluation/07_classification_evaluation.html)
-- [Practical 7: Classification evaluation answers](practicals/07_classification_evaluation/07_classification_evaluation_answers.html)
-- [data](practicals/07_classification_evaluation/data.zip)
+<!-- - [Practical 7: Classification evaluation Evaluation](practicals/07_classification_evaluation/07_classification_evaluation.html) -->
+<!-- - [Practical 7: Classification evaluation answers](practicals/07_classification_evaluation/07_classification_evaluation_answers.html) -->
+<!-- - [data](practicals/07_classification_evaluation/data.zip) -->
 
-Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
+<!-- Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues) -->
 
-## Column 2
+<!-- ## Column 2 -->
 
-### Required reading
+<!-- ### Required reading -->
 
-Study the following materials
+<!-- Study the following materials -->
 
-- [ISLR V2 Chapter 4 (if you haven't done so yet) + 8.1](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
+<!-- - [ISLR V2 Chapter 4 (if you haven't done so yet) + 8.1](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf) -->
 
 
 
