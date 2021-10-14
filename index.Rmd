@@ -355,7 +355,7 @@ This week's slides:
 This week's practical is on regression. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
 
 - [Practical 4: Regression](practicals/04_Regression/04_Regression.html)
-- [Practical 4: Regression with code solutions](practicals/04_Regression/01_Regression_answers.html)
+- [Practical 4: Regression with code solutions](practicals/04_Regression/04_Regression_answers.html)
 
 Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
 
