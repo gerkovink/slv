@@ -1,8 +1,8 @@
 ---
 title: "Supervised learning: Nonlinear Regression"
 params:
-  # answers: true
-  answers: false
+  answers: true
+  # answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,7 +13,7 @@ output:
     toc_float: true
     df_print: paged
     theme: paper
-    # pandoc_args: --output=nonlinear_regression_answers.html
+    pandoc_args: --output=08_nonlinear_regression_answers.html
   pdf_document:
     toc: true
     toc_depth: 1
