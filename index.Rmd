@@ -453,6 +453,33 @@ Study the following materials
 
 
 
+# Week 8
 
+## Column 1
+
+### Lecture (Monday 9am - [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7))
+
+Slides will follow.
+
+<!-- This week's slides: -->
+
+<!-- - [Lecture 8](lectures/L8/week-8.pdf) -->
+
+
+### Practical
+This week's practical is on nonlinear regression. Code solutions are also given to you. Use these answers to help yourself when you're stuck.
+
+- [Practical 8: Nonlinear regression](practicals/08_nonlinear_regression/08_nonlinear_regression.html)
+- [Practical 8: Nonlinear regression answers](practicals/08_nonlinear_regression/08_nonlinear_regression_answers.html)
+
+Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
+
+## Column 2
+
+### Required reading
+
+Study the following materials
+
+- [ISLR V2 Sections ISLR: Chapter 7](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
 
 
