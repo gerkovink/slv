@@ -459,11 +459,9 @@ Study the following materials
 
 ### Lecture (Monday 9am - [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7))
 
-Slides will follow.
+This week's slides:
 
-<!-- This week's slides: -->
-
-<!-- - [Lecture 8](lectures/L8/week-8.pdf) -->
+- [Lecture 8](lectures/L8/week-8.pdf)
 
 
 ### Practical
