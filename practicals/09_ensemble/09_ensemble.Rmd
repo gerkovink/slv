@@ -14,10 +14,6 @@ output:
     df_print: paged
     theme: paper
     pandoc_args: --output=09_ensemble_answers.html
-  pdf_document:
-    toc: true
-    toc_depth: 1
-    latex_engine: xelatex
 ---
 
 # Introduction
@@ -41,7 +37,7 @@ library(ggforce)
 
 ```{r, make-data, include = F}
 set.seed(1)
-dat <- read_csv(file = "~/Downloads/Indian Liver Patient Dataset (ILPD).csv",
+dat <- read_csv(file = "data/Indian Liver Patient Dataset (ILPD).csv",
                 col_names = c("Age", "Gender", "Total_Bilirubin", "Direct_Bilirubin",
                               "Alkaline_Phosphotase", "Alamine_Aminotransferase",
                               "Aspartate_Aminotransferase", "Total_Protiens",
@@ -339,7 +335,7 @@ var_importance(shap_results)
 
 __17. Plot the `SHAP` values for every individual for every feature and interpret them.__
 
-```{r shap-plots, results = params$answers, fig.show='hide'}
+```{r shap-plots, results = params$answers}
 shap_long <- shap.prep(shap = shap_results,
                        X_train = train_x)
 
@@ -354,8 +350,7 @@ xgb.plot.shap(train_x, features = colnames(train_x), model = xgboost_train, n_co
 ## Those with a higher age have a lower probability of being diseased,
 ## while those with a higher Albumin have a higher probability of being diseased.
 
-## The second plot basically shows the same relationships, but in a somewhat 
-## different (and more detailed!) way.
+## The second set of plots displays the marginal relationships of the SHAP values with the predictors. This conveys the same information, but in greater detail. The interpretability may be a bit tricky for the inexperienced data analyst. 
 ```
 
 ---
