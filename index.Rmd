@@ -486,3 +486,31 @@ Study the following materials
 - [ISLR V2 Sections ISLR: Chapter 7](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
 
 
+# Week 9
+
+## Column 1
+
+### Lecture (Monday 9am - [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7))
+
+This week's slides:
+
+- [Lecture 9](lectures/L9/week-9.pdf)
+
+
+### Practical
+This week's practical is on nonlinear regression. Code solutions are also given to you. Use these answers to help yourself when you're stuck.
+
+- [Practical 9: Tree-based methods and SVM](practicals/09_ensemble/09_ensemble.html)
+- [Practical 9: Tree-based methods and SVM answers](practicals/09_ensemble/09_ensemble_answers.html)
+
+Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
+
+## Column 2
+
+### Required reading
+
+Study the following materials
+
+- [ISLR V2 Sections ISLR: Chapters 8.1, 8.2 and 9](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
+
+
