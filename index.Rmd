@@ -502,6 +502,7 @@ This week's practical is on nonlinear regression. Code solutions are also given 
 
 - [Practical 9: Tree-based methods and SVM](practicals/09_ensemble/09_ensemble.html)
 - [Practical 9: Tree-based methods and SVM answers](practicals/09_ensemble/09_ensemble_answers.html)
+- [Data](practicals/09_ensemble/data.zip)
 
 Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2021/issues)
 
