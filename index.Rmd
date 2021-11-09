@@ -513,4 +513,13 @@ Study the following materials
 
 - [ISLR V2 Sections ISLR: Chapters 8.1, 8.2 and 9](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
 
+# Practice Exam
 
+
+## Column 1
+
+### Practice Exam
+This exam gives an idea of the typo of questions that can be asked. It is by no means meant to be representative in length nor difficulty with respect to the actual exam. The actual exam is usually a bit longer. 
+
+- [Practice Exam](practice_exam/SLV_Practice.pdf)
+- [data.Rdata](practice_exam/data.Rdata)
