@@ -523,4 +523,5 @@ Study the following materials
 This exam gives an idea of the type of questions that can be expected. It is by no means meant to be representative in length nor difficulty with respect to the actual exam. The actual exam is usually a bit longer. 
 
 - [Practice Exam](practice_exam/SLV_Practice.pdf)
+- [RMD with code answers](practice_exam/SLV_Practice.Rmd)
 - [data.Rdata](practice_exam/data.Rdata)

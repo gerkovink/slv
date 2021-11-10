@@ -1,0 +1,171 @@
+---
+title: "Example exam"
+fontsize: 11pt
+urlcolor: blue
+output: 
+  pdf_document:
+    latex_engine: xelatex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, out.width = "70%", fig.align = "center")
+library(MASS)
+library(tidyverse)
+```
+Welcome to the Practice Exam. The exam consists of two parts: a __theoretical part__  and a __practical part__. 
+
+You have XX hours in total. You have to upload your answers on blackboard before the deadline (XX:XX). If you have a valid reason for an extension, you are allowed to submit until 30 minutes after the deadline.
+
+## Making the exam
+- Open the project file `Practice.Rproj` in RStudio before you start.
+- Your answers to both the theoretical and practical parts will be in R markdown format. Use the prepared answer file `Practice_0000000.Rmd`, replace `0000000` with your student number and also put your student number in the `Author` field at the top of the file. See the next section for hand-in details.
+- The exam is "open book": you can use the internet, you can use your notes, you can use the reading materials, you can use the lecture slides, etc.
+- You are __not allowed to communicate with others in any way__. We trust that you abide by this rule. We will use various methods to check for fraudulent entries.
+
+
+## Handing in the exam
+You will hand in a zipped folder with the following files on blackboard:
+
+- `Practice_0000000.Rmd` (replace 0000000 with your student number)
+- `/data` (folder with data to which the .Rmd file refers)
+- `Practice_0000000.html` (Compiled version of your answer R markdown. Please try to submit this but if compiling does not work don't worry about it!)
+
+Make sure to give yourself enough time at the end for zipping and uploading.
+
+\newpage
+
+# Theoretical part [10 points]
+
+__Q1 Data Visualization__
+
+__a)__ For the following plot, name the aesthetics (that is, name the mapping of variables to aesthetics), geoms, and scales. If applicable, name any facets, transformations, or special coordinate systems. 
+
+```{r plot_t1a}
+mice::boys %>%
+  mutate(Hgt = hgt - mean(hgt, na.rm = TRUE),
+         Age = cut(age, 0:22, labels = 0:21)) %>%
+  group_by(Age) %>%
+  summarize(Hgt = mean(Hgt, na.rm = TRUE)) %>% 
+  mutate(Diff = cut(Hgt, c(-Inf, 0, Inf),
+                    labels = c("Below Average", "Above Average"))) %>%
+  ggplot(aes(x = Age, y = Hgt, fill = Diff)) + 
+  geom_bar(stat = "identity") +
+  coord_flip()
+```
+```{r plot_t1a, eval = FALSE, echo = FALSE}
+mice::boys %>%
+  mutate(Hgt = hgt - mean(hgt, na.rm = TRUE),
+         Age = cut(age, 0:22, labels = 0:21)) %>%
+  group_by(Age) %>%
+  summarize(Hgt = mean(Hgt, na.rm = TRUE)) %>% 
+  mutate(Diff = cut(Hgt, c(-Inf, 0, Inf),
+                    labels = c("Below Average", "Above Average"))) %>%
+  ggplot(aes(x = Hgt, y = Age, fill = Diff)) + 
+  geom_bar(stat = "identity")
+```
+
+__b)__ For the following plot, name the aesthetics (that is, name the mapping of variables to aesthetics), geoms, and scales. If applicable, name any facets, transformations, or special coordinate systems. 
+
+```{r plot_t1b}
+mice::boys %>%
+  mutate(area = ifelse(reg == "city", "city", "rural")) %>%
+  filter(!is.na(area)) %>%
+  ggplot(aes(age, fill = area)) +
+  geom_density(alpha = .3) # some transparency
+```
+
+
+\newpage
+__Q2 Give 3 suggestions for improvement of the following plot, and explain your rationale based on visualization principles.__ 
+If it's too small, you can zoom in on to the pdf.
+
+```{r plots_t1b}
+knitr::include_graphics("img/A.jpg")
+```
+
+__Q3 Energy prediction__
+You work for an energy company. From the cool smart energy meters in every customer's home you can collect features, measured on 15 minute intervals. Your goal is to predict whether the energy usage is over their prepayment or under (i.e. too much used or too little used. 
+You have a hand-coded label for each row in the data. Your dataset has 5000 columns and 2000 rows.
+
+__a)__ You want to perform logistic regression but it does not work when you have more columns than rows. What would your strategy be? Be specific about the steps you would take! 
+
+__b)__ From your logistic regression model, you obtain the confusion matrix below. What is the accuracy? Is this high compared to the baseline accuracy? 
+```{r, echo=FALSE}
+y <- c(rep("over", 1900), rep("under", 100))
+yhat <- y
+yhat[1753:1900] <- "under"
+yhat[1901:1926] <- "over"
+table(predicted = yhat, true = y)
+```
+
+\newpage
+
+# Practical part [11 points]
+
+Load the following packages:
+
+```{r pck, echo=TRUE, eval=FALSE}
+library(DAAG)
+library(glmnet)
+```
+
+__Q5 Decision rule__
+
+__a)__
+In the data set `head.injury` (from package `DAAG`), obtain a logistic regression model relating `clinically.important.brain.injury` to all the other variables.
+```{r}
+DAAG::head.injury %>% 
+  glm(clinically.important.brain.injury ~ ., data = ., family = binomial(link = "logit")) %>%
+  summary()
+```
+
+
+__b)__
+Patients whose risk is sufficiently high will be sent for CT (computed tomography). Using a risk threshold of 0.025 (2.5%), turn the result into a decision rule for use of CT and indicate three different scenarios that would satisfy the threshold.
+```{r}
+# A risk of 2.5% corresponds to the cutoff for a CT scan. This translates to a logit of log(.025 / (1−.025))=−3.663562. 
+#In other words, any sum of variables that “lifts” the intercept above -3.66 would satisfy the cutoff.
+```
+
+
+\newpage
+
+```{r eval = FALSE, echo = FALSE}
+examdata <- BinomialExample
+save(examdata, file = "data.Rdata")
+```
+
+__Q6 LASSO__
+
+In this question, the goal is to predict `y` from `x`. 
+
+__a)__ Load the workspace `data.Rdata` and show an informative plot of the `y` and `x` space.
+
+__b)__ Run a 10-fold cross-validated LASSO logistic (`family = "binomial"`) regression using the misclassification error as the criterion.  
+```{r eval = FALSE, echo = FALSE}
+cv_fit <- cv.glmnet(examdata$x, examdata$y, family = "binomial", type.measure = "class")
+```
+
+
+__c)__ Make a prediction of the class labels at $\lambda = 0.05, 0.01$
+```{r eval = FALSE, echo = FALSE}
+predict(cv_fit, newx = examdata$x, type = "class", s = c(0.05, 0.01))
+```
+
+
+__d)__ create a plot that shows the values of $\lambda$. What is the optimal value and why?
+```{r eval = FALSE, echo = FALSE}
+plot(cv_fit)
+cv_fit
+# lambda_min: the lambda which minimizes out-of-sample loss in CV --> minimum mean cross-validated error,
+# lamda_1se: the largest lambda value within 1 standard error of lambda_min --> the most regularized model 
+# such that the cross-validated error is within one standard error of the minimum.
+# vertical lines show locations of lambda min and lambda_1se
+# the 1-standard-error-rule acknowledges the fact that the risk curves are estimated (and have error). It therefore favors parsimony. In other words: a simpler model that yields about the same predictive power as the one under lambda_min.
+# The motivation for lambda_1se originated in the 1984 book Classification and regression trees by Breiman, Friedman, Olshen and Stone and can be found in chapter 3, paragraph 4.3
+```
+
+
+
+
+
