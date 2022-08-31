@@ -36,17 +36,15 @@ All practicals and assignments should be hand in [through this repo](https://git
 
 | When?  |         | Where?      |
 |--------|---------|-------------|
-| 08-Sep | 9 am | MS Teams |
-| 13-Sep | 9 am | [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7) |
-| 20-Sep | 9 am | [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7) |
-| 27-Sep | 9 am | [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7) |
-| 04-Okt | 9 am | [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7) |
-| 11-Okt | 9 am | [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7) |
-| 18-Okt | 9 am | [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7) |
-| 25-Okt | 9 am | [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7) |
-| 01-Nov | 9 am | [Ruppert D](https://goo.gl/maps/ZL959UVy7ne8bRMD7) |
-
-
+| 12-Sep | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
+| 19-Sep | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
+| 26-Sep | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
+| 03-Okt | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
+| 10-Okt | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
+| 17-Okt | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
+| 24-Okt | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
+| 31-Okt | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
+| 08-Nov | 5 pm | **Exam** |
 
 ---
 
@@ -55,7 +53,7 @@ All practicals and assignments should be hand in [through this repo](https://git
 ## Column 1
 
 ### Statistical Learning and Visualization
-In nine weeks we will dive into statistical learning and visualization in R. We will focus on supervised learning techniques and data wrangling in the context of data analysis and inference, as well as the connection to research philosophy. During every lecture we will treat a different theoretical aspect. Following each lecture there will be a computer lab exercise that connects the statistical theory to practice, as well as a Q&A meeting (Wednesdays @ 11am - online) wherein you can pose any and all questions that remain unanswered about the course materials, theory, practice and your practical assignments. 
+In eight weeks we will dive into statistical learning and visualization in R. We will focus on supervised learning techniques and data wrangling in the context of data analysis and inference, as well as the connection to research philosophy. During every lecture we will treat a different theoretical aspect. Following each lecture there will be a computer lab exercise that connects the statistical theory to practice, as well as a Q&A meeting (Wednesdays @ 11am - [BBG 106](https://www.uu.nl/en/buys-ballot-building)) wherein you can pose any and all questions that remain unanswered about the course materials, theory, practice and your practical assignments. 
 
 ### Assignment and Grading
 
@@ -205,20 +203,18 @@ Naturally, you will need internet access for these services to be accessed.
 
 You can [find assignment 1 here](assignments/assignment1_eda.html)
 
-Due date is Oct 4 @ 23.59pm.
+Due date is Oct 3 @ 23.59pm.
 
 ### Assignment 2
 You can [find assignment 2 here](assignments/assignment_prediction.html)
 
-Due date is Nov 15 @ 23.59pm.
+Due date is Nov 13 @ 23.59pm.
 
 # Week 1
 
 ## Column 1
 
-### Lecture (Wednesday 9am - online)
-
-**You can find** [**the lecture meeting here**](https://teams.microsoft.com/l/meetup-join/19%3a4a155a8069ec4218a0efe4ee8fdaa2cf%40thread.tacv2/1630956947631?context=%7b%22Tid%22%3a%22d72758a0-a446-4e0f-a0aa-4bf95a4a10e7%22%2c%22Oid%22%3a%22cc7d7fcd-73aa-4668-936a-2ca38cace0f3%22%7d)
+### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
 
 - [Lecture Slides](lectures/L1/Lecture-1.html)
 
