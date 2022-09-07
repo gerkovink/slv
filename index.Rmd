@@ -216,8 +216,7 @@ Due date is Nov 13 @ 23.59pm.
 ## Column 1
 
 ### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
-
-- [Lecture Slides](lectures/L1/Lecture-1.html)
+Please find the [Lecture Slides here](lectures/L1/Lecture-1.html)
 
 ### Practical
 This week's practical is on data wrangling. The answers are also given to you. Use these answers to help yourself when you're stuck. 
