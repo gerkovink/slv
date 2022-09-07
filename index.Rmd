@@ -202,14 +202,14 @@ Naturally, you will need internet access for these services to be accessed.
 
 ### Assignment 1
 
-You can [find assignment 1 here](assignments/assignment1_eda.html)
+You can [find last year's assignment 1 here](assignments/assignment1_eda.html)
 
-Due date is Oct 3 @ 23.59pm.
+Due date is most likely Oct 3 @ 23.59pm.
 
 ### Assignment 2
-You can [find assignment 2 here](assignments/assignment_prediction.html)
+You can [find last year's assignment 2 here](assignments/assignment_prediction.html)
 
-Due date is Nov 13 @ 23.59pm.
+Due date is most likely Nov 13 @ 23.59pm.
 
 # Week 1
 
@@ -516,8 +516,8 @@ Study the following materials
 ## Column 1
 
 ### Practice Exam
-This exam gives an idea of the type of questions that can be expected. It is by no means meant to be representative in length nor difficulty with respect to the actual exam. The actual exam is usually a bit longer. 
+This exam gives an idea of the type of questions that could have been expected last year. It is by no means meant to be representative in length nor difficulty with respect to the actual exam. The actual exam is usually a bit longer. 
 
-- [Practice Exam](practice_exam/SLV_Practice.pdf)
+- [Last year's Practice Exam](practice_exam/SLV_Practice.pdf)
 - [RMD with code answers](practice_exam/SLV_Practice.Rmd)
 - [data.Rdata](practice_exam/data.Rdata)
