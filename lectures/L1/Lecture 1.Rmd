@@ -563,7 +563,7 @@ The model to the left fits quite well to the observations.
 4. What types of analyses and learning are there?
 
 ## Some example questions
-- Did our 
+- Did our imputations make sense?
 - Who will win the election?
 - Is the climate changing?
 - Why are women underrepresented in STEM degrees?
