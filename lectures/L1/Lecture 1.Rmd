@@ -157,7 +157,7 @@ I am a statistician
 
   - If you are ill, ask your classmates to cover for you.
   
-- If you feel that you are stuck, and the wait for the Q&A session is too long: [open a GitHub issue here](https://github.com/gerkovink/INFOMDA1-2021/issues/). 
+- If you feel that you are stuck, and the wait for the Q&A session is too long: [open a GitHub issue here](https://github.com/gerkovink/INFOMDA1-2022/issues/). 
 
   - You are most likely not the only one with that question. You are simply the bravest or the first. 
   - **Do not contact us via private chat or e-mail for content-related questions**.
