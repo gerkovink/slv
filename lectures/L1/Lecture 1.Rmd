@@ -1,5 +1,5 @@
 ---
-title: "Introduction and Data Wrangling"
+title: "Introduction, Basics and Data Wrangling"
 author: "Gerko Vink"
 date: "Supervised Learning and Visualization"
 output: 
@@ -149,6 +149,8 @@ When external figures and other sources are shown:
 
 Opinions are my own. 
 
+I am a statistician
+
 ## Procedural stuff
 - If there is anything important - contact me!
 - The on-location lectures will not be recorded. 
@@ -160,7 +162,6 @@ Opinions are my own.
   - You are most likely not the only one with that question. You are simply the bravest or the first. 
   - **Do not contact us via private chat or e-mail for content-related questions**.
   - use a [`reprex`](https://reprex.tidyverse.org) to detail your issue, when code is involved. 
-  
 - If you expect that you are going to miss some part(s) of the course, please notify me via a private MS-Teams message or e-mail.
 
 ## Course pages
@@ -176,7 +177,6 @@ All course materials should be submitted through a pull-request from your Fork o
 
 The structure of your submissions should follow the corresponding repo's README. To make it simple, I have added an example for the first practical. 
 If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from one of my other courses. There you can find video walkthroughs that detail the process. 
-
 
 # Course overview
 
@@ -553,46 +553,6 @@ The model to the left fits quite well to the observations.
 
 <div style="clear: both;"></div>
 
-# When you know you're wrong
-
-## Scenario
-
-In a survey about research integrity and fraud we surveyed behaviours and practices in the following format. 
-
-<center>
-![](img/14. not_applicable.png){width=60%}
-</center>
-<br>
-Many behaviours were surveyed over multiple groups of people. Some findings:
-
-- In most groups similar behavioural prevalence was observed. 
-- When looking at subgroups, prevalences differ between subgroups.
-- Not applicables were much more prevalent in one group than in other groups
-- There are too few cases and too many patterns with `Not Applicable`'s over features to allow for a pattern-wise analysis (stratified analysis).
-- There are too many `Not Applicables` to allow for *listwise deletion*.
-
-We know: 
-
-1. `Not Applicable` is not randomly distributed over the data. Removing them is not valid
-2. `Not Applicable` are bonafide missing values: there should be no observations.
-
-## Now what?
-There is no solution to this problem
-
-1. Imputing `Not Applicable` values will have an effect on the inference
-2. Not imputing `Not Applicable` leaves us with no inference
-3. Ignoring `Not Applicable` leaves us with an unknown effect; we know from missing data theory that it will bias results and lead to invalid inference. 
-
-**Our solution**
-We chose to impute the data as `1 (never)`. There are a couple of reasons why we think that this is the best defendable scenario.
-
-1. `Never` has a semantic similarity to a behaviour not being applicable. However, `Never` implies intentionality; `Not Applicable` does not.
-2. We know the effect the imputation has on the inference: Filling in `Never` will underestimate intentional behaviours. 
-
-In this case the choice was made to make a **deliberate error**. The estimates obtained would serve as an underestimation of *true behaviour* and can be regarded as the lower bound. 
-
-This is a conservative approach; this study was aimed at identifying fraud - labeling non-fraudulent behaviour as fraudulent was deemed the more costly error.
-
 # Bringing it in perspective
 
 ## Focus points
@@ -620,8 +580,8 @@ This is a conservative approach; this study was aimed at identifying fraud - lab
 - **Explanation**: <br> Why did/does something happen?
 - **Prescription**: <br> What should we do?
 
-## Modes in data analysis
-- **Exploratory**: <br> mining for interesting patterns or results
+### Modes in data analysis
+- **Exploratory**: <br> Mining for interesting patterns or results
 - **Confirmatory**: <br> Testing hypotheses
 
 ## Some examples
@@ -706,7 +666,7 @@ Challeng %>%
 
 ## How wages differ
 <center>
-![](img/ISLR.png){width=70%}
+![](img/ISLR.png){width=60%}
 </center> <br>
 [Source: ISLR2, pp. 2](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
 
@@ -717,7 +677,7 @@ Challeng %>%
 [Source: wikimedia commons](https://nl.wikipedia.org/wiki/John_Snow)
 </center>
 
-## Predicting the outcome of the 2021 Dutch elections
+## Predicting the outcome of elections
 <center>
 ![](img/polls.png){width=80%} <br>
 [Source: Hans Muster](https://gitlab.com/gbuvn1/opinion-polling-graph)
@@ -734,7 +694,7 @@ where $P$ is the percentage of ILI physician visit and $Q$ is the ILI-related qu
 
 ## Identifying Brontës from Austen
 <center>
-![](img/BronteAusten.png){width=97%} <br>
+![](img/BronteAusten.png){width=90%} <br>
 </center>
 [Eder, Maciej & Rybicki, Jan & Kestemont, Mike. (2016). Stylometry with R: A Package for Computational Text Analysis. The R Journal. 8. 107-121. 10.32614/RJ-2016-007. ](https://svn.r-project.org/Rjournal/html/archive/2016-1/eder-rybicki-kestemont.pdf)
 
@@ -758,7 +718,7 @@ where $P$ is the percentage of ILI physician visit and $Q$ is the ILI-related qu
   Challenger disaster<br>
   How wages differ<br>
   Jon Snow and Cholera<br>
-  Election prediction<br>
+  Election prediction<br><br>
   
   Flu trends<br>
   Brontë or Austen <br>
@@ -796,15 +756,14 @@ Challeng %>%
 ```
 </div>
 <div style="float: right; width: 50%;">
-In de besluitvorming om de launch wel door te laten gaan was sprake van dark data.
+In the decision process that led to the unfortunate launch of spaceshuttle challenger, some dark data existed.
 
-***Dark data*** is informatie die niet beschikbaar is. 
+***Dark data*** is information that is not available. 
 
-Deze ontbrekende informatie heeft de potentie om mensen te misleiden. De notie dat wij misleid kunnen worden is belangrijk omdat we daarmee ook moeten aannemen dat kunstmatige intelligentie misleid kan worden. 
-
+Such unavailable information can mislead people. The notion that we could potentially be misled is important, because we then need to accept that our outcome analysis or decision process might be faulty. 
 <br><br>
 
-**Als je niet alle informatie hebt, dan bestaat altijd de mogelijkheid dat je een foutieve conclusie trekt of een verkeerde beslissing neemt.**
+**If you do not have all information, there is always a possibility that you arrive at an invalid conclusion or a wrong decision.**
 </div>
 
 # From data collection to output
@@ -841,7 +800,7 @@ however;
 
 ## Thought
 <center>
-![](img/measlescompress.gif){width=90%}
+![](img/measlescompress.gif){width=60%}
 </center>
 [Source: Mike Lee](https://www.mikelee.co/animation/2017-06-28-wsj-measles-vaccination-chart/)
 
@@ -850,11 +809,12 @@ however;
 ## Wrangling in the pipeline
 
 Data wrangling is the process of transforming and mapping data from one "raw" data form into another format. 
+
   - The process is often iterative
   - The goal is to add purpose and value to the data in order to maximize the downstream analytical gains
 
 <center>
-![](img/wrangle.png){width=100%}
+![](img/wrangle.png){width=80%}
 </center>
 [Source: R4DS](https://r4ds.had.co.nz/wrangle-intro.html)
 
