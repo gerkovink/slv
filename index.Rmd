@@ -15,7 +15,7 @@ library(flexdashboard)
 
 # Intro {.sidebar}
 
-This dashboard covers the course materials for the course [***Supervised learning and visualization***](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=INFOMDA1&collegejaar=2022&taal=en)
+This online dashboard covers the course materials for the course [***Supervised learning and visualization***](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=INFOMDA1&collegejaar=2022&taal=en)
 
 ---
 
