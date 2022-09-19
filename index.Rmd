@@ -369,9 +369,9 @@ Study the following materials
 -[ISLR V2 Chapter 1, 2 and 3](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
 
 
-# Week 5
+<!-- # Week 5 -->
 
-## Column 1
+<!-- ## Column 1 -->
 
 <!-- ### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building)) -->
 <!-- This week's slides: -->
@@ -404,7 +404,7 @@ Study the following materials
 ### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
 This week's slides:
 
-- [Lecture 6](lectures/L6/week-6.pdf)
+- [Lecture 5](lectures/L6/week-6.pdf)
 
 
 ### Practical
@@ -432,7 +432,7 @@ Study the following materials
 ### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
 This week's slides:
 
-- [Lecture 7](lectures/L7/week-7.pdf)
+- [Lecture 6](lectures/L7/week-7.pdf)
 
 
 ### Practical
@@ -462,7 +462,7 @@ Study the following materials
 
 This week's slides:
 
-- [Lecture 8](lectures/L8/week-8.pdf)
+- [Lecture 7](lectures/L8/week-8.pdf)
 
 
 ### Practical
@@ -490,7 +490,7 @@ Study the following materials
 
 This week's slides:
 
-- [Lecture 9](lectures/L9/week-9.pdf)
+- [Lecture 8](lectures/L9/week-9.pdf)
 
 
 ### Practical

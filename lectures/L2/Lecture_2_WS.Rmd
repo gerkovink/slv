@@ -22,7 +22,6 @@ output:
 ```{r warning=FALSE, message=FALSE}
 library(MASS)     # for the cats data
 library(dplyr)    # data manipulation
-library(mice)     # missing data 
 library(haven)    # in/exporting data
 library(magrittr) # pipes
 library(ggplot2)  # Plotting device
@@ -30,18 +29,10 @@ library(ggplot2)  # Plotting device
 
 <img src="img/pipe.jpg" style="display:block;width:500px;margin-left:auto;margin-right:auto"></img>
 
-## New functions
-
-- `transform()`: changing and adding columns
-- `dplyr::filter()`: row-wise selection (of cases)
-- `table()`: frequency tables
-- `class()`: object class
-- `levels()`: levels of a factor
-- `order()`: data entries in increasing order
-- `haven::read_sav()`: import SPSS data
-- `cor()`: bivariate correlation
-- `sample()`: drawing a sample
-- `t.test()`: t-test 
+## loading packages
+```{r}
+library(mice)     # missing data 
+```
 
 # Data manipulation
 
@@ -203,6 +194,12 @@ Your code becomes more readable:
 - local variables and copied objects are avoided
 - easy to add steps in the sequence
 
+## The  boys data
+```{r}
+boys %>% head()
+```
+
+
 ## What do pipes do:
 
 - `f(x)` becomes `x %>% f()`
@@ -216,21 +213,6 @@ boys %>% cor(use = "pairwise.complete.obs")
 - `h(g(f(x)))` becomes `x %>% f %>% g %>% h` 
 ```{r}
 boys %>% subset(select = wgt) %>% na.omit() %>% max()
-```
-
-## Useful: outlier filtering
-```{r}
-nrow(cats)
-
-cats.outl <- 
-  cats %>% 
-  filter(Hwt < mean(Hwt) + 3 * sd(Hwt), 
-         Hwt > mean(Hwt) - 3 * sd(Hwt))
-
-nrow(cats.outl)
-
-cats %>%  
-  filter(Hwt > mean(Hwt) + 3 * sd(Hwt))
 ```
 
 # More pipe stuff
@@ -316,6 +298,20 @@ cats.test <-
 cats.test
 ```
 
+## Overwriting with a pipe
+```{r}
+boys %<>% 
+  arrange(desc(bmi)) 
+head(boys)
+```
+
+## Beware
+```{r}
+boys %$%
+  lm(bmi ~ .*., data = .)
+```
+
+
 # Visualization
 
 ## Plotting
@@ -347,7 +343,7 @@ rm(boys)
 
 ## Why visualise?
 
-<img src="img/anscombe.svg" style="display:block;width:90%;margin:0 auto;"></img>
+<img src="img/anscombe.svg" style="display:block;width:80%;margin:0 auto;"></img>
 <p style="text-align:center;font-style:italic;font-size:0.5em;">Source: Anscombe, F. J. (1973). "Graphs in Statistical Analysis". American Statistician. 27 (1): 17–21.</p>
 
 
@@ -415,13 +411,26 @@ boxplot(hgt ~ reg, boys,  main = "Boxplot", xlab = "Region",
 boys %>% md.pattern(rotate.names = TRUE) # from mice
 ```
 
-## Many R objects have a `plot()` method
+## Many R classes have a `plot()` method
 
 ```{r, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")}
 result <- lm(age~wgt, boys)
 plot(result, which = 1)
 ```
 
+## Many R classes have a `plot()` method
+
+```{r, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")}
+result <- lm(age~wgt, boys)
+plot(result, which = 2)
+```
+
+## Many R classes have a `plot()` method
+
+```{r, warning=FALSE, message=FALSE, fig.align='center', dev.args=list(bg="transparent")}
+result <- lm(age~wgt, boys)
+plot(result, which = 5)
+```
 
 ## Neat! But what if we want more control?
 
@@ -496,7 +505,7 @@ plot(gg)
 ```
 
 ## Why this syntax?
-<img src="img/ggani.gif" style="display:block;width:90%;margin:0 auto;"></img>
+<img src="img/ggani.gif" style="display:block;width:80%;margin:0 auto;"></img>
 
 ## Aesthetics
 
@@ -615,5 +624,4 @@ boys %>%
 ## Helpful link in RStudio
 <img src="img/cheatsheet.png" style="display:block;width:90%;margin:0 auto;"></img>
 
-# Practical
 
