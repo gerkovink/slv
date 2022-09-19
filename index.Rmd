@@ -265,7 +265,7 @@ The following links may be useful
 ### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
 This week's slides:
 
-- [Lecture Slides](lectures/L2/Lecture_2.html)
+- [Lecture Slides](lectures/L2/Lecture_2_WS.html)
 
 ### Practical
 This week's practical is on data visualization. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 

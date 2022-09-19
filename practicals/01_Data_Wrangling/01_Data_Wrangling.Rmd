@@ -1,8 +1,8 @@
 ---
 title: "Data wrangling"
 params:
-  #answers: true # uncomment if answers are to be included
-  answers: false
+  answers: true # uncomment if answers are to be included
+  #answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -14,7 +14,7 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    #pandoc_args: --output=01_Data_Wrangling_Answers.html # uncomment if answers are to be included
+    pandoc_args: --output=01_Data_Wrangling_Answers.html # uncomment if answers are to be included
 ---
 
 ---
@@ -129,13 +129,16 @@ Tidyverse contains many data loading functions -- each for their own file type -
 
 ---
 
-6. __Use the function `read_csv()` to import the file "data/googleplaystore.csv" and store it in a variable called `apps`.__
+6. __Use the function `read_csv()` to import the file "googleplaystore.csv" and store it in a variable called `apps`.__
 
 ---
 
 ```{r readcsv, include = params$answers}
-apps <- read_csv("data/googleplaystore.csv")
+con <- url("https://www.gerkovink.com/slv/practicals/01_Data_Wrangling/data/googleplaystore.csv")
+apps <- read_csv(con)
 ```
+
+Above I load the data directly from the online source. Naturally, this is most efficient in terms of data storage and energy conservation. For reasons of simplicity, I will adopt a workflow below that would mimic a local scenario. In that scenario I have a RStudio project, with a data subfolder where my data are stored. If you'd like to run the code below, then either grab the archive from the course website on GitHub (see the address above) or create your own data folder relative to the root of you project or RMD file.  
 
 If necessary, use the help files. These import functions from the tidyverse are fast and safe: they display informative errors if anything goes wrong. `read_csv()` also displays a message with information on how each column is imported: which variable type each column gets.
 

@@ -3026,10 +3026,18 @@ types such as from SPSS or Stata). The most common file type is
 <hr />
 <ol start="6" style="list-style-type: decimal">
 <li><strong>Use the function <code>read_csv()</code> to import the file
-“data/googleplaystore.csv” and store it in a variable called
+“googleplaystore.csv” and store it in a variable called
 <code>apps</code>.</strong></li>
 </ol>
 <hr />
+<p>Above I load the data directly from the online source. Naturally,
+this is most efficient in terms of data storage and energy conservation.
+For reasons of simplicity, I will adopt a workflow below that would
+mimic a local scenario. In that scenario I have a RStudio project, with
+a data subfolder where my data are stored. If you’d like to run the code
+below, then either grab the archive from the course website on GitHub
+(see the address above) or create your own data folder relative to the
+root of you project or RMD file.</p>
 <p>If necessary, use the help files. These import functions from the
 tidyverse are fast and safe: they display informative errors if anything
 goes wrong. <code>read_csv()</code> also displays a message with

@@ -3040,11 +3040,12 @@ types such as from SPSS or Stata). The most common file type is
 <hr />
 <ol start="6" style="list-style-type: decimal">
 <li><strong>Use the function <code>read_csv()</code> to import the file
-“data/googleplaystore.csv” and store it in a variable called
+“googleplaystore.csv” and store it in a variable called
 <code>apps</code>.</strong></li>
 </ol>
 <hr />
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>apps <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/googleplaystore.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="st">&quot;https://www.gerkovink.com/slv/practicals/01_Data_Wrangling/data/googleplaystore.csv&quot;</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>apps <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(con)</span></code></pre></div>
 <pre><code>## Rows: 10841 Columns: 13
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -3053,6 +3054,14 @@ types such as from SPSS or Stata). The most common file type is
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>Above I load the data directly from the online source. Naturally,
+this is most efficient in terms of data storage and energy conservation.
+For reasons of simplicity, I will adopt a workflow below that would
+mimic a local scenario. In that scenario I have a RStudio project, with
+a data subfolder where my data are stored. If you’d like to run the code
+below, then either grab the archive from the course website on GitHub
+(see the address above) or create your own data folder relative to the
+root of you project or RMD file.</p>
 <p>If necessary, use the help files. These import functions from the
 tidyverse are fast and safe: they display informative errors if anything
 goes wrong. <code>read_csv()</code> also displays a message with
