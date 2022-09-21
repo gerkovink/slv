@@ -1,5 +1,5 @@
 ---
-title: "Assignment Prediction Model"
+title: "Assignment Exploratory Data Analysis"
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -12,7 +12,7 @@ output:
 
 Graded assignment
 
-### Find a dataset and create and form, build and evaluate a prediction model. 
+### Find a dataset and create and form, build and perform an Exploratory Data Analysis. 
 You can use data from anywhere. For example, you may use [Google dataset search](https://toolbox.google.com/datasetsearch), [Kaggle datasets](https://www.kaggle.com/datasets), a dataset from an `R` package, or something you collected yourself.
 
 ### Requirements
