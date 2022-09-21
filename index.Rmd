@@ -312,6 +312,14 @@ This week's slides:
 ### Q&A
 During the Q&A session on Wednesday, we will devote some time to missing data analysis
 
+If you'd like to get rid of the `DS_Store` files that Mac systems generate, then run the following in the terminal:
+```{r eval = FALSE, echo = TRUE}
+cd "PATH TO YOUR GIT REPO"
+git rm --cached "*.DS_Store"
+git commit -m "remove all .DS_Store"
+```
+
+
 ### Practical
 This week's practical is on exploratory data analysis. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
 

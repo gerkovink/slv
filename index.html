@@ -3285,6 +3285,14 @@ set and its labeling to be more informative.</li>
 <h3>Q&amp;A</h3>
 <p>During the Q&amp;A session on Wednesday, we will devote some time to
 missing data analysis</p>
+If you’d like to get rid of the <code>DS_Store</code> files that Mac
+systems generate, then run the following in the terminal:
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cd <span class="st">&quot;PATH TO YOUR GIT REPO&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>git rm <span class="sc">--</span>cached <span class="st">&quot;*.DS_Store&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>git commit <span class="sc">-</span>m <span class="st">&quot;remove all .DS_Store&quot;</span></span></code></pre></div>
 </div>
 <div id="practical-2" class="section level3">
 <h3>Practical</h3>
