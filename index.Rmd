@@ -202,14 +202,14 @@ Naturally, you will need internet access for these services to be accessed.
 
 ### Assignment 1
 
-You can [find last year's assignment 1 here](assignments/assignment1_eda.html)
+You can [find this year's assignment 1 here](assignments/assignment_eda.html)
 
-Due date is most likely Oct 3 @ 23.59pm.
+Due date is Oct 3 @ 23.59pm.
 
 ### Assignment 2
-You can [find last year's assignment 2 here](assignments/assignment_prediction.html)
+You can [find this year's assignment 2 here](assignments/assignment_prediction.html)
 
-Due date is most likely Nov 13 @ 23.59pm.
+Due date is Nov 13 @ 23.59pm.
 
 # Week 1
 
