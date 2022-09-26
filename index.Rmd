@@ -342,6 +342,8 @@ The following links may be useful
 
 - [A wonderful post about misusing the y-axis](https://www.thisismetis.com/blog/misleading-graphs-manipulating-the-y-axis). 
 - [`ggplot`'s reference page](https://ggplot2.tidyverse.org)
+- [A tool to pick color palettes](https://colorbrewer2.org/) including palettes that are color-blind accessible. 
+- [A color palette tutorial for seaborn, vega-altair, and ggplot2 ](https://towardsdatascience.com/how-to-use-color-palettes-for-your-data-visualization-ac4eaf3de37b)
 
 ### Must watch
 The following lecture by [Edward Tufte](https://www.edwardtufte.com/tufte/) is quite nice. 
