@@ -420,11 +420,15 @@ This week's slides:
 ### Practical
 This week's practical is on classification. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
 
-- [Practical 6: Classification](practicals/06_classification/06_classification.html)
-- [Practical 6: Classification answers](practicals/06_classification/06_classification_answers.html)
+- [Practical 5: Classification](practicals/06_classification/06_classification.html)
+- [Practical 5: Classification answers](practicals/06_classification/06_classification_answers.html)
 - [data](practicals/06_classification/data.zip)
 
 Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
+
+**NOT HAND IN, BUT STILL USEFUL**: I also give you the following practical from last year. Please view and study the practical up to and including Exercise 10. No need to hand anything in. All the regularization (`glmnet`) exercises 11-19 are not relevant for this course, but you may of course use the methods in your Assignment 2 if you wish. Let me know if you have any questions. 
+
+- [Practical: Best subset selection and regularization](practicals/05_Regression_Evaluation/05_Regression_Evaluation_answers.html)
 
 ## Column 2
 
