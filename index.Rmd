@@ -452,8 +452,8 @@ This week's slides:
 ### Practical
 This week's practical is on classification. Code solutions are also given to you. Use these answers to help yourself when you're stuck.
 
-- [Practical 7: Classification evaluation](practicals/07_classification_evaluation/07_classification_evaluation.html)
-- [Practical 7: Classification evaluation answers](practicals/07_classification_evaluation/07_classification_evaluation_answers.html)
+- [Practical 6: Classification evaluation](practicals/07_classification_evaluation/07_classification_evaluation.html)
+- [Practical 6: Classification evaluation answers](practicals/07_classification_evaluation/07_classification_evaluation_answers.html)
 - [data](practicals/07_classification_evaluation/data.zip)
 
 Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
@@ -482,8 +482,8 @@ This week's slides:
 ### Practical
 This week's practical is on nonlinear regression. Code solutions are also given to you. Use these answers to help yourself when you're stuck.
 
-- [Practical 8: Nonlinear regression](practicals/08_nonlinear_regression/08_nonlinear_regression.html)
-- [Practical 8: Nonlinear regression answers](practicals/08_nonlinear_regression/08_nonlinear_regression_answers.html)
+- [Practical 7: Nonlinear regression](practicals/08_nonlinear_regression/08_nonlinear_regression.html)
+- [Practical 7: Nonlinear regression answers](practicals/08_nonlinear_regression/08_nonlinear_regression_answers.html)
 
 Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
 
@@ -510,8 +510,8 @@ This week's slides:
 ### Practical
 This week's practical is on nonlinear regression. Code solutions are also given to you. Use these answers to help yourself when you're stuck.
 
-- [Practical 9: Tree-based methods and SVM](practicals/09_ensemble/09_ensemble.html)
-- [Practical 9: Tree-based methods and SVM answers](practicals/09_ensemble/09_ensemble_answers.html)
+- [Practical 8: Tree-based methods and SVM](practicals/09_ensemble/09_ensemble.html)
+- [Practical 8: Tree-based methods and SVM answers](practicals/09_ensemble/09_ensemble_answers.html)
 - [Data](practicals/09_ensemble/data.zip)
 
 Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
