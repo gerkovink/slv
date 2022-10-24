@@ -429,6 +429,7 @@ Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022).
 **NOT HAND IN, BUT STILL USEFUL**: I also give you the following practical from last year. Please view and study the practical up to and including Exercise 10. No need to hand anything in. All the regularization (`glmnet`) exercises 11-19 are not relevant for this course, but you may of course use the methods in your Assignment 2 if you wish. Let me know if you have any questions. 
 
 - [Practical: Best subset selection and regularization](practicals/05_Regression_Evaluation/05_Regression_Evaluation_answers.html)
+- [the generate_formulas() code](practicals/05_Regression_Evaluation/generate_formulas.R)
 
 ## Column 2
 
